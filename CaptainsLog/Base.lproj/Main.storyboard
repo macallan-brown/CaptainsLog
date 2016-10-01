@@ -1,26 +1,187 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ceo-fo-DS2">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Navigation Controller-->
+        <scene sceneID="UHZ-SF-a9y">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController id="ceo-fo-DS2" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="CEB-qE-k3Z">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="ccp-Nt-2vn" kind="relationship" relationship="rootViewController" id="SdZ-we-U5V"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xrc-W1-Ncr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-640" y="193"/>
+        </scene>
+        <!--homeViewController-->
+        <scene sceneID="qra-GA-dEw">
+            <objects>
+                <viewController title="homeViewController" automaticallyAdjustsScrollViewInsets="NO" id="ccp-Nt-2vn" customClass="HomeViewController" customModule="CaptainsLog" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="FoK-AS-6ud"/>
+                        <viewControllerLayoutGuide type="bottom" id="i10-8Y-qrS"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="s3p-dg-fEs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="I got to spend a beautiful evening with a family looking over lake windermere" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hYY-b1-NmT">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="qIA-Mw-VIr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="4xl-aE-Hjp">
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xdj-X7-YSC">
+                                        <state key="normal" image="happyEmojiButton.png"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h4t-eq-uwn">
+                                        <state key="normal" image="funnyEmojiButton.png"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D6J-TR-hIq">
+                                        <state key="normal" image="sadEmojiButton.png"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D6v-QL-TUT">
+                                        <state key="normal" image="angryEmojiButton.png"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VDx-XN-epn">
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Add to your log">
+                                    <color key="titleColor" red="0.28627450980000002" green="0.33725490200000002" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="addToLogTouched" destination="ccp-Nt-2vn" eventType="touchUpInside" id="Vjc-b6-UJQ"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="q1r-eG-19l">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="recentMemoryTableViewCell" rowHeight="90" id="OBQ-zJ-8BV" customClass="RecentMemoryTableViewCell" customModule="CaptainsLog" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="90"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OBQ-zJ-8BV" id="flF-Me-aZi">
+                                            <frame key="frameInset" width="310" height="89"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hvY-j8-oBp">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="53" id="T2o-DV-y71"/>
+                                                    </constraints>
+                                                    <string key="text">Matt, Michael, and I got yelled at by a security gaurd in a budapest bar. Matt tried to open the door to the street and pulled the handle off
+</string>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.28627450980000002" green="0.33725490200000002" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <string key="userLabel">Matt, Michael, and I got yelled at by a security gaurd in a budapest bar. Matt tried to open the door to the street and pulled the handle off</string>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="09/05/16" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HqJ-Ba-o5W">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="17j-FX-MD6"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.28627450980000002" green="0.33725490200000002" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Budapest, Hungary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W6x-x3-5TJ">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="Xz5-4P-uMd"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.28627450980000002" green="0.33725490200000002" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="😂" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sgj-GI-1by">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="0GI-zQ-Tj4"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <color key="textColor" red="0.28627450980000002" green="0.33725490200000002" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="sgj-GI-1by" secondAttribute="bottom" id="6nC-Nc-dWZ"/>
+                                                <constraint firstItem="HqJ-Ba-o5W" firstAttribute="leading" secondItem="flF-Me-aZi" secondAttribute="leadingMargin" constant="8" id="85Y-0J-v5v"/>
+                                                <constraint firstItem="hvY-j8-oBp" firstAttribute="top" secondItem="flF-Me-aZi" secondAttribute="topMargin" id="Ggu-Bp-Gtw"/>
+                                                <constraint firstAttribute="trailing" secondItem="hvY-j8-oBp" secondAttribute="trailing" constant="8" id="PS6-k4-ead"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="HqJ-Ba-o5W" secondAttribute="bottom" id="Pfw-7U-EJR"/>
+                                                <constraint firstItem="hvY-j8-oBp" firstAttribute="leading" secondItem="flF-Me-aZi" secondAttribute="leadingMargin" constant="8" id="eaF-Je-bjc"/>
+                                                <constraint firstItem="W6x-x3-5TJ" firstAttribute="leading" secondItem="HqJ-Ba-o5W" secondAttribute="trailing" constant="8" id="f9R-Es-eZM"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="W6x-x3-5TJ" secondAttribute="bottom" id="iyP-XE-kmZ"/>
+                                                <constraint firstItem="sgj-GI-1by" firstAttribute="leading" secondItem="W6x-x3-5TJ" secondAttribute="trailing" constant="8" id="knn-3c-7ar"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="date" destination="HqJ-Ba-o5W" id="w7x-tA-AVd"/>
+                                            <outlet property="details" destination="hvY-j8-oBp" id="3DP-Za-W2M"/>
+                                            <outlet property="emojiTag" destination="sgj-GI-1by" id="SWe-hq-cpC"/>
+                                            <outlet property="location" destination="W6x-x3-5TJ" id="XrQ-Fv-cwv"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="ccp-Nt-2vn" id="MFm-Wa-pnc"/>
+                                    <outlet property="delegate" destination="ccp-Nt-2vn" id="VU4-3e-PCv"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f97-qn-38n">
+                                <state key="normal" title=" Add details later?" image="emptyCheckButton.png">
+                                    <color key="titleColor" red="0.28627450980000002" green="0.33725490200000002" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.77647058823529413" green="0.90980392156862744" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="q1r-eG-19l" firstAttribute="leading" secondItem="s3p-dg-fEs" secondAttribute="leadingMargin" id="5rH-vU-Z15"/>
+                            <constraint firstItem="hYY-b1-NmT" firstAttribute="top" secondItem="FoK-AS-6ud" secondAttribute="bottom" constant="24" id="CJR-Ky-I93"/>
+                            <constraint firstItem="q1r-eG-19l" firstAttribute="trailing" secondItem="s3p-dg-fEs" secondAttribute="trailingMargin" id="Clj-Pw-alU"/>
+                            <constraint firstItem="q1r-eG-19l" firstAttribute="top" secondItem="VDx-XN-epn" secondAttribute="bottom" constant="20" id="GUb-Se-vyE"/>
+                            <constraint firstItem="VDx-XN-epn" firstAttribute="centerX" secondItem="s3p-dg-fEs" secondAttribute="centerX" id="Gqj-Gf-Gqr"/>
+                            <constraint firstItem="hYY-b1-NmT" firstAttribute="trailing" secondItem="s3p-dg-fEs" secondAttribute="trailingMargin" id="JkR-b0-n3T"/>
+                            <constraint firstAttribute="bottom" secondItem="q1r-eG-19l" secondAttribute="bottom" id="Jks-yK-HlY"/>
+                            <constraint firstItem="4xl-aE-Hjp" firstAttribute="centerX" secondItem="s3p-dg-fEs" secondAttribute="centerX" id="QYk-Wf-AdE"/>
+                            <constraint firstItem="4xl-aE-Hjp" firstAttribute="top" secondItem="hYY-b1-NmT" secondAttribute="bottom" constant="20" id="S8v-zX-1Ic"/>
+                            <constraint firstItem="hYY-b1-NmT" firstAttribute="leading" secondItem="s3p-dg-fEs" secondAttribute="leadingMargin" id="VIu-wp-cdO"/>
+                            <constraint firstItem="f97-qn-38n" firstAttribute="top" secondItem="4xl-aE-Hjp" secondAttribute="bottom" constant="20" id="i2V-CS-guT"/>
+                            <constraint firstItem="VDx-XN-epn" firstAttribute="top" secondItem="f97-qn-38n" secondAttribute="bottom" constant="20" id="v2y-cs-4dK"/>
+                            <constraint firstItem="f97-qn-38n" firstAttribute="centerX" secondItem="s3p-dg-fEs" secondAttribute="centerX" id="x9i-iO-wJ3"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Captain's Log" id="H8R-bn-1Dc"/>
+                    <connections>
+                        <outlet property="angryButton" destination="D6v-QL-TUT" id="xDS-yB-6oP"/>
+                        <outlet property="detailsTextView" destination="hYY-b1-NmT" id="yoz-ix-bvm"/>
+                        <outlet property="funnyButton" destination="h4t-eq-uwn" id="kRf-eQ-ENE"/>
+                        <outlet property="happyButton" destination="xdj-X7-YSC" id="zih-v0-Vlf"/>
+                        <outlet property="recentMemoryTableView" destination="q1r-eG-19l" id="Ujy-IL-fPr"/>
+                        <outlet property="sadButton" destination="D6J-TR-hIq" id="40j-Sd-P7m"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PyH-UT-WhI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="204" y="192.05397301349328"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="angryEmojiButton.png" width="59" height="59"/>
+        <image name="emptyCheckButton.png" width="43" height="43"/>
+        <image name="funnyEmojiButton.png" width="59" height="59"/>
+        <image name="happyEmojiButton.png" width="59" height="59"/>
+        <image name="sadEmojiButton.png" width="59" height="59"/>
+    </resources>
 </document>
