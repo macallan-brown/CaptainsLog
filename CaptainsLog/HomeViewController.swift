@@ -20,27 +20,15 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var sadButton: UIButton!
     @IBOutlet weak var angryButton: UIButton!
     
-    var moments = [NSManagedObject]()
+    let logManager = LogManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        self.detailsTextView.setContentOffset(CGPoint.zero, animated: false)
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let managedContext = appDelegate.persistentContainer.viewContext
-        
-        let fetchRequest:NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "Moment")
-
-        do {
-            let results = try managedContext.fetch(fetchRequest)
-            moments = results as! [NSManagedObject]
-        } catch let error as NSError {
-            print("Could not fetch \(error), \(error.userInfo)")
-        }
+        self.logManager.loadMoments()
     }
 
     override func didReceiveMemoryWarning() {
@@ -51,17 +39,14 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     // MARK: TableView Delegate
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return moments.count
+        return self.logManager.countMoments()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.recentMemoryTableView.dequeueReusableCell(withIdentifier: "recentMemoryTableViewCell", for: indexPath) as! RecentMemoryTableViewCell
         
-        let moment = moments[indexPath.row]
-        cell.setupWith(details: moment.value(forKey: "details") as! String,
-                       location: moment.value(forKey: "location") as! String,
-                       date: moment.value(forKey: "date") as! Date,
-                       emoji: moment.value(forKey: "emojiTag") as! String)
+        let moment = self.logManager.getMomentAtIndex(index: indexPath.row)
+        cell.setupWith(details: moment.details, location: moment.location, date: moment.date, emoji: moment.emoji)
         return cell
     }
     
@@ -70,33 +55,13 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     // MARK: Add to Log clicked
-    @IBAction func addToLogTouched() {
-        self.detailsTextView.text! = ""
-        saveMoment(details: self.detailsTextView.text, location: "add location", date: Date(), emoji: "😂")
-        self.recentMemoryTableView.reloadData()
-    }
     
-    func saveMoment(details:String, location:String, date:Date, emoji:String) {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let managedContext = appDelegate.persistentContainer.viewContext
+    @IBAction func addToLogTouched() {
+        logManager.addMoment(details: self.detailsTextView.text, location: "add location", date: Date(), emoji: "😂")
         
-        let entity =  NSEntityDescription.entity(forEntityName: "Moment",
-                                                 in:managedContext)
-        
-        let moment = NSManagedObject(entity: entity!, insertInto: managedContext)
-        moment.setValue(details, forKey: "details")
-        moment.setValue(location, forKey: "location")
-        moment.setValue(date, forKey: "date")
-        moment.setValue(emoji, forKey: "emojiTag")
-        
-        do {
-            try managedContext.save()
-            moments.append(moment)
-        } catch let error as NSError  {
-            print("Could not save \(error), \(error.userInfo)")
-        }
+        self.recentMemoryTableView.reloadData()
+        self.detailsTextView.text! = ""
     }
-
 
 }
 

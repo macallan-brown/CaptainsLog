@@ -19,6 +19,7 @@
 		239D09181D9ABC230050D9FD /* sadEmojiButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 239D09161D9ABC230050D9FD /* sadEmojiButton.png */; };
 		239D091A1D9ABD000050D9FD /* emptyCheckButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 239D09191D9ABD000050D9FD /* emptyCheckButton.png */; };
 		23EB0D931D9FE768005AD7E4 /* RecentMemoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EB0D921D9FE768005AD7E4 /* RecentMemoryTableViewCell.swift */; };
+		23EB0D981DA03DCA005AD7E4 /* LogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EB0D971DA03DCA005AD7E4 /* LogManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		239D09161D9ABC230050D9FD /* sadEmojiButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sadEmojiButton.png; sourceTree = "<group>"; };
 		239D09191D9ABD000050D9FD /* emptyCheckButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emptyCheckButton.png; sourceTree = "<group>"; };
 		23EB0D921D9FE768005AD7E4 /* RecentMemoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentMemoryTableViewCell.swift; sourceTree = "<group>"; };
+		23EB0D971DA03DCA005AD7E4 /* LogManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				236C2D291D945AC0001C6C58 /* AppDelegate.swift */,
+				23EB0D961DA03DA3005AD7E4 /* Managers */,
 				23EB0D8F1D9FE650005AD7E4 /* View Controllers */,
 				23EB0D911D9FE733005AD7E4 /* Views */,
 				236C2D2D1D945AC0001C6C58 /* Main.storyboard */,
@@ -107,6 +110,14 @@
 				23EB0D921D9FE768005AD7E4 /* RecentMemoryTableViewCell.swift */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		23EB0D961DA03DA3005AD7E4 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				23EB0D971DA03DCA005AD7E4 /* LogManager.swift */,
+			);
+			name = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,6 +199,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				236C2D2C1D945AC0001C6C58 /* HomeViewController.swift in Sources */,
+				23EB0D981DA03DCA005AD7E4 /* LogManager.swift in Sources */,
 				236C2D2A1D945AC0001C6C58 /* AppDelegate.swift in Sources */,
 				236C2D321D945AC0001C6C58 /* CaptainsLog.xcdatamodeld in Sources */,
 				23EB0D931D9FE768005AD7E4 /* RecentMemoryTableViewCell.swift in Sources */,
