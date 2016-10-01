@@ -20,6 +20,10 @@ class LogManager {
     
     var moments = [NSManagedObject]()
     
+    func countMoments() -> Int {
+        return moments.count
+    }
+    
     func addMoment(details:String, location:String, date:Date, emoji:String) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let managedContext = appDelegate.persistentContainer.viewContext
@@ -35,18 +39,32 @@ class LogManager {
         
         do {
             try managedContext.save()
-            moments.append(moment)
+            loadMoments()
         } catch let error as NSError  {
             print("Could not save \(error), \(error.userInfo)")
         }
     }
     
-    func countMoments() -> Int {
-        return moments.count
+    func updateMoment(index: Int, details:String, location:String, emoji:String) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    
+        moments[index].setValue(details, forKey: "details")
+        moments[index].setValue(location, forKey: "location")
+        moments[index].setValue(emoji, forKey: "emojiTag")
+        
+        appDelegate.saveContext()
     }
     
-    func removeMoment() {
-        
+    func removeMoment(index: Int) {
+        do {
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            let managedContext = appDelegate.persistentContainer.viewContext
+            managedContext.delete(moments[index] as NSManagedObject)
+            moments.remove(at: index)
+            try managedContext.save()
+        } catch let error as NSError {
+            print("Could not delete \(error), \(error.userInfo)")
+        }
     }
     
     func getMomentAtIndex(index: Int) -> (details: String, location:String, date:Date, emoji:String) {
@@ -63,6 +81,9 @@ class LogManager {
         let managedContext = appDelegate.persistentContainer.viewContext
         
         let fetchRequest:NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "Moment")
+        let sectionSortDescriptor = NSSortDescriptor(key: "date", ascending: false)
+        let sortDescriptors = [sectionSortDescriptor]
+        fetchRequest.sortDescriptors = sortDescriptors
         
         do {
             let results = try managedContext.fetch(fetchRequest)

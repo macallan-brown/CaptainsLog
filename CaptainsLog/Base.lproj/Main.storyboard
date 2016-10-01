@@ -52,10 +52,10 @@
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="recentMemoryTableViewCell" rowHeight="90" id="OBQ-zJ-8BV" customClass="RecentMemoryTableViewCell" customModule="CaptainsLog" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="28" width="348" height="90"/>
+                                                        <rect key="frame" x="0.0" y="28" width="347" height="90"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OBQ-zJ-8BV" id="flF-Me-aZi">
-                                                            <frame key="frameInset" width="315" height="89"/>
+                                                            <frame key="frameInset" width="314" height="89"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hvY-j8-oBp">
@@ -205,7 +205,7 @@
         <!--Moment Detail View Controller-->
         <scene sceneID="JW2-gi-BKD">
             <objects>
-                <viewController id="7Dk-2o-qlL" customClass="MomentDetailViewController" customModule="CaptainsLog" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="7Dk-2o-qlL" customClass="MomentDetailViewController" customModule="CaptainsLog" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4wd-79-uym"/>
                         <viewControllerLayoutGuide type="bottom" id="Vb9-bo-XPU"/>
@@ -216,7 +216,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qjg-qa-KFo">
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xpa-nl-jIn">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xpa-nl-jIn">
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="170" id="nGS-FP-zdx"/>
@@ -246,7 +246,7 @@
                                             <color key="titleColor" red="0.28627450980000002" green="0.33725490200000002" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                     </button>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qx6-lE-iIZ">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qx6-lE-iIZ">
                                         <color key="textColor" red="0.28627450980000002" green="0.33725490200000002" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -254,6 +254,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RQ8-Au-7jI">
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <state key="normal" title="Update moment"/>
+                                        <connections>
+                                            <action selector="updateMomentButtonTouched:" destination="7Dk-2o-qlL" eventType="touchUpInside" id="xoF-qV-9fe"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>

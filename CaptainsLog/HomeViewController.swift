@@ -29,6 +29,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewWillAppear(_ animated: Bool) {
         self.logManager.loadMoments()
+        recentMemoryTableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {

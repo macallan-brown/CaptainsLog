@@ -32,6 +32,7 @@ class MomentDetailViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         moment = logManager.getMomentAtIndex(index: momentIndex)
         setupWith(details: moment.details, location: moment.location, date: moment.date, emoji: moment.emoji)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Delete", style: .plain, target: self, action: #selector(deleteTapped))
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,6 +48,27 @@ class MomentDetailViewController: UIViewController {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM/dd/yy"
         self.title = dateFormatter.string(from: date)
+    }
+    
+    @IBAction func updateMomentButtonTouched(_ sender: AnyObject) {
+        logManager.updateMoment(index: momentIndex,
+                                details:self.details.text!,
+                                location:self.location.text!,
+                                emoji:"😶")
+    }
+    
+    func deleteTapped(){
+        let deleteAlert = UIAlertController(title: "Delete moment?", message: "All data will be lost.", preferredStyle: UIAlertControllerStyle.alert)
+        
+        deleteAlert.addAction(UIAlertAction(title: "Delete", style: .default, handler: { (action: UIAlertAction!) in
+            self.logManager.removeMoment(index: self.momentIndex)
+            _ = self.navigationController?.popViewController(animated: true)
+        }))
+        
+        deleteAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
+        }))
+        
+        present(deleteAlert, animated: true, completion: nil)
     }
     
     
