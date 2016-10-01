@@ -20,7 +20,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var sadButton: UIButton!
     @IBOutlet weak var angryButton: UIButton!
     
-    let logManager = LogManager()
+    let logManager = LogManager.sharedInstance
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +44,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.recentMemoryTableView.dequeueReusableCell(withIdentifier: "recentMemoryTableViewCell", for: indexPath) as! RecentMemoryTableViewCell
-        
         let moment = self.logManager.getMomentAtIndex(index: indexPath.row)
         cell.setupWith(details: moment.details, location: moment.location, date: moment.date, emoji: moment.emoji)
         return cell
@@ -58,9 +57,19 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBAction func addToLogTouched() {
         logManager.addMoment(details: self.detailsTextView.text, location: "add location", date: Date(), emoji: "😂")
-        
         self.recentMemoryTableView.reloadData()
         self.detailsTextView.text! = ""
+    }
+    
+    // MARK: Segue Methods
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "showMomentDetailSegue") {
+            let momentDetailViewController = segue.destination as! MomentDetailViewController
+            
+            let momentIndex = self.recentMemoryTableView.indexPathForSelectedRow?.row
+            momentDetailViewController.momentIndex = momentIndex!
+        }
     }
 
 }

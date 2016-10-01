@@ -111,6 +111,7 @@
                                                             <outlet property="details" destination="hvY-j8-oBp" id="3DP-Za-W2M"/>
                                                             <outlet property="emojiTag" destination="sgj-GI-1by" id="SWe-hq-cpC"/>
                                                             <outlet property="location" destination="W6x-x3-5TJ" id="XrQ-Fv-cwv"/>
+                                                            <segue destination="7Dk-2o-qlL" kind="show" identifier="showMomentDetailSegue" id="kx2-OS-eTN"/>
                                                         </connections>
                                                     </tableViewCell>
                                                 </prototypes>
@@ -185,7 +186,9 @@
                             <constraint firstItem="4xl-aE-Hjp" firstAttribute="centerX" secondItem="s3p-dg-fEs" secondAttribute="centerX" id="hHM-3B-xUE"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Captain's Log" id="H8R-bn-1Dc"/>
+                    <navigationItem key="navigationItem" title="Captain's Log" id="H8R-bn-1Dc">
+                        <barButtonItem key="rightBarButtonItem" title="Log" id="dj0-xF-iyL"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="angryButton" destination="D6v-QL-TUT" id="xDS-yB-6oP"/>
                         <outlet property="detailsTextView" destination="hYY-b1-NmT" id="yoz-ix-bvm"/>
@@ -198,6 +201,102 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PyH-UT-WhI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="204" y="192.05397301349328"/>
+        </scene>
+        <!--Moment Detail View Controller-->
+        <scene sceneID="JW2-gi-BKD">
+            <objects>
+                <viewController id="7Dk-2o-qlL" customClass="MomentDetailViewController" customModule="CaptainsLog" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4wd-79-uym"/>
+                        <viewControllerLayoutGuide type="bottom" id="Vb9-bo-XPU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wDk-zk-u7S">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qjg-qa-KFo">
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xpa-nl-jIn">
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="170" id="nGS-FP-zdx"/>
+                                        </constraints>
+                                        <color key="textColor" red="0.28627450980000002" green="0.33725490200000002" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dML-pF-CaV">
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EIe-IY-dZn">
+                                                <state key="normal" image="happyEmojiButton.png"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="irK-ht-7vl">
+                                                <state key="normal" image="funnyEmojiButton.png"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wG8-th-wA7">
+                                                <state key="normal" image="sadEmojiButton.png"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5vY-LH-YPu">
+                                                <state key="normal" image="angryEmojiButton.png"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AzB-ws-tQ1">
+                                        <state key="normal" title=" Add details later?" image="emptyCheckButton.png">
+                                            <color key="titleColor" red="0.28627450980000002" green="0.33725490200000002" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qx6-lE-iIZ">
+                                        <color key="textColor" red="0.28627450980000002" green="0.33725490200000002" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RQ8-Au-7jI">
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="Update moment"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="qx6-lE-iIZ" secondAttribute="trailing" constant="10" id="05T-hJ-QQJ"/>
+                                    <constraint firstItem="AzB-ws-tQ1" firstAttribute="centerX" secondItem="Qjg-qa-KFo" secondAttribute="centerX" id="9VR-ID-2Yq"/>
+                                    <constraint firstItem="AzB-ws-tQ1" firstAttribute="top" secondItem="dML-pF-CaV" secondAttribute="bottom" constant="20" id="SmY-Zs-nt0"/>
+                                    <constraint firstItem="qx6-lE-iIZ" firstAttribute="leading" secondItem="Qjg-qa-KFo" secondAttribute="leading" constant="10" id="aIc-A1-e5z"/>
+                                    <constraint firstItem="xpa-nl-jIn" firstAttribute="top" secondItem="Qjg-qa-KFo" secondAttribute="top" constant="20" id="aaK-dC-bcH"/>
+                                    <constraint firstAttribute="trailing" secondItem="xpa-nl-jIn" secondAttribute="trailing" constant="10" id="cvo-rw-WSX"/>
+                                    <constraint firstItem="dML-pF-CaV" firstAttribute="top" secondItem="qx6-lE-iIZ" secondAttribute="bottom" constant="20" id="dUq-nh-Pnr"/>
+                                    <constraint firstItem="qx6-lE-iIZ" firstAttribute="top" secondItem="xpa-nl-jIn" secondAttribute="bottom" constant="20" id="g9K-lN-dpN"/>
+                                    <constraint firstItem="xpa-nl-jIn" firstAttribute="leading" secondItem="Qjg-qa-KFo" secondAttribute="leading" constant="10" id="hkf-Nb-jxf"/>
+                                    <constraint firstItem="RQ8-Au-7jI" firstAttribute="top" secondItem="AzB-ws-tQ1" secondAttribute="bottom" constant="20" id="iDH-mJ-ilu"/>
+                                    <constraint firstItem="AzB-ws-tQ1" firstAttribute="centerX" secondItem="Qjg-qa-KFo" secondAttribute="centerX" id="mgY-iH-XlR"/>
+                                    <constraint firstItem="RQ8-Au-7jI" firstAttribute="centerX" secondItem="Qjg-qa-KFo" secondAttribute="centerX" id="rta-Cj-h7u"/>
+                                    <constraint firstItem="dML-pF-CaV" firstAttribute="centerX" secondItem="Qjg-qa-KFo" secondAttribute="centerX" id="yeo-Go-b1h"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.78879779579999998" green="0.89750486610000002" blue="0.95199614759999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Qjg-qa-KFo" firstAttribute="leading" secondItem="wDk-zk-u7S" secondAttribute="leading" id="Kf3-Yz-2JZ"/>
+                            <constraint firstAttribute="bottom" secondItem="Qjg-qa-KFo" secondAttribute="bottom" id="Xgk-zA-pti"/>
+                            <constraint firstAttribute="trailing" secondItem="Qjg-qa-KFo" secondAttribute="trailing" id="hVD-Cd-n4y"/>
+                            <constraint firstItem="Qjg-qa-KFo" firstAttribute="top" secondItem="4wd-79-uym" secondAttribute="bottom" id="rZP-PI-yZe"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="addDetailsButton" destination="AzB-ws-tQ1" id="RCl-Qa-eCr"/>
+                        <outlet property="angryButton" destination="5vY-LH-YPu" id="87y-hI-cxo"/>
+                        <outlet property="details" destination="xpa-nl-jIn" id="mfh-LZ-eaU"/>
+                        <outlet property="funnyButton" destination="irK-ht-7vl" id="bQ7-wu-gia"/>
+                        <outlet property="happyButton" destination="EIe-IY-dZn" id="H52-ZO-giy"/>
+                        <outlet property="location" destination="qx6-lE-iIZ" id="DS4-m5-5fS"/>
+                        <outlet property="sadButton" destination="wG8-th-wA7" id="DtB-Rm-aLF"/>
+                        <outlet property="updateMomentButton" destination="RQ8-Au-7jI" id="W2q-aM-u5f"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C8c-WC-NuD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="925.60000000000002" y="191.1544227886057"/>
         </scene>
     </scenes>
     <resources>
