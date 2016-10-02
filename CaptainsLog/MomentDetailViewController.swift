@@ -17,7 +17,6 @@ class MomentDetailViewController: UIViewController {
     @IBOutlet weak var sadButton: UIButton!
     @IBOutlet weak var angryButton: UIButton!
     
-    @IBOutlet weak var addDetailsButton: UIButton!
     @IBOutlet weak var updateMomentButton: UIButton!
     
     var momentIndex = Int()
@@ -26,8 +25,7 @@ class MomentDetailViewController: UIViewController {
     var logManager = LogManager.sharedInstance
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
+        details.layer.cornerRadius = 10.0
     }
     
     override func viewWillAppear(_ animated: Bool) {

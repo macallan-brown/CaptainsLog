@@ -45,7 +45,7 @@
                                                     <constraint firstAttribute="height" constant="100" id="qIA-Mw-VIr"/>
                                                 </constraints>
                                                 <color key="textColor" red="0.28627450980000002" green="0.33725490200000002" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="q1r-eG-19l">
@@ -55,7 +55,7 @@
                                                         <rect key="frame" x="0.0" y="28" width="347" height="90"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OBQ-zJ-8BV" id="flF-Me-aZi">
-                                                            <frame key="frameInset" width="314" height="89"/>
+                                                            <frame key="frameInset" width="314" height="89.5"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hvY-j8-oBp">
@@ -64,7 +64,7 @@
                                                                     </constraints>
                                                                     <string key="text">Matt, Michael, and I got yelled at by a security gaurd in a budapest bar. Matt tried to open the door to the street and pulled the handle off
 </string>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                     <color key="textColor" red="0.28627450980000002" green="0.33725490200000002" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                     <string key="userLabel">Matt, Michael, and I got yelled at by a security gaurd in a budapest bar. Matt tried to open the door to the street and pulled the handle off</string>
@@ -121,15 +121,6 @@
                                                     <outlet property="delegate" destination="ccp-Nt-2vn" id="VU4-3e-PCv"/>
                                                 </connections>
                                             </tableView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f97-qn-38n">
-                                                <state key="normal" title=" Add details later?" image="emptyCheckButton">
-                                                    <color key="titleColor" red="0.28627450980000002" green="0.33725490200000002" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
-                                                <state key="selected" image="checkButton"/>
-                                                <connections>
-                                                    <action selector="addDetailsButtonTouched:" destination="ccp-Nt-2vn" eventType="touchUpInside" id="Nwr-l0-z8K"/>
-                                                </connections>
-                                            </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VDx-XN-epn">
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <state key="normal" title="Add to your log">
@@ -171,21 +162,26 @@
                                                     </button>
                                                 </subviews>
                                             </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Describe your moment:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ipd-hJ-Aoo">
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" red="0.28627450980000002" green="0.33725490200000002" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="hYY-b1-NmT" firstAttribute="leading" secondItem="pUb-iH-NAA" secondAttribute="leadingMargin" constant="10" id="3fY-H6-8xs"/>
-                                            <constraint firstItem="4xl-aE-Hjp" firstAttribute="top" secondItem="hYY-b1-NmT" secondAttribute="bottom" constant="10" id="5z1-ns-aUD"/>
+                                            <constraint firstItem="4xl-aE-Hjp" firstAttribute="top" secondItem="hYY-b1-NmT" secondAttribute="bottom" constant="20" id="5z1-ns-aUD"/>
+                                            <constraint firstItem="Ipd-hJ-Aoo" firstAttribute="leading" secondItem="pUb-iH-NAA" secondAttribute="leading" constant="18" id="7Xz-dz-ZRI"/>
                                             <constraint firstItem="q1r-eG-19l" firstAttribute="centerX" secondItem="pUb-iH-NAA" secondAttribute="centerX" id="FJT-v2-VzZ"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="hYY-b1-NmT" secondAttribute="trailing" constant="10" id="FjT-r3-38X"/>
                                             <constraint firstAttribute="bottom" secondItem="q1r-eG-19l" secondAttribute="bottom" id="MbB-HZ-27c"/>
                                             <constraint firstItem="q1r-eG-19l" firstAttribute="top" secondItem="VDx-XN-epn" secondAttribute="bottom" constant="22" id="O0u-3h-QxX"/>
-                                            <constraint firstItem="hYY-b1-NmT" firstAttribute="top" secondItem="pUb-iH-NAA" secondAttribute="top" constant="20" id="OQH-uI-h7x"/>
-                                            <constraint firstItem="VDx-XN-epn" firstAttribute="top" secondItem="f97-qn-38n" secondAttribute="bottom" constant="10" id="Qmn-PC-erC"/>
+                                            <constraint firstItem="hYY-b1-NmT" firstAttribute="top" secondItem="pUb-iH-NAA" secondAttribute="top" constant="35" id="OQH-uI-h7x"/>
                                             <constraint firstAttribute="height" constant="600" id="Upv-fe-hsV"/>
+                                            <constraint firstItem="VDx-XN-epn" firstAttribute="top" secondItem="4xl-aE-Hjp" secondAttribute="bottom" constant="20" id="X3I-qA-SJv"/>
                                             <constraint firstItem="q1r-eG-19l" firstAttribute="centerX" secondItem="VDx-XN-epn" secondAttribute="centerX" id="aO5-Wx-mdR"/>
                                             <constraint firstItem="hYY-b1-NmT" firstAttribute="leading" secondItem="q1r-eG-19l" secondAttribute="leading" id="dOu-A0-S20"/>
-                                            <constraint firstItem="q1r-eG-19l" firstAttribute="centerX" secondItem="f97-qn-38n" secondAttribute="centerX" id="eMC-2u-EsG"/>
-                                            <constraint firstItem="f97-qn-38n" firstAttribute="top" secondItem="4xl-aE-Hjp" secondAttribute="bottom" constant="44" id="fug-uE-Uzf"/>
+                                            <constraint firstItem="hYY-b1-NmT" firstAttribute="top" secondItem="Ipd-hJ-Aoo" secondAttribute="bottom" constant="6" id="lE4-TH-UGW"/>
                                             <constraint firstItem="hYY-b1-NmT" firstAttribute="centerX" secondItem="4xl-aE-Hjp" secondAttribute="centerX" id="tlU-7Q-fc7"/>
                                         </constraints>
                                     </view>
@@ -211,7 +207,6 @@
                         <barButtonItem key="rightBarButtonItem" title="Log" id="dj0-xF-iyL"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="addDetailsButton" destination="f97-qn-38n" id="k3D-Bi-fqd"/>
                         <outlet property="angryButton" destination="D6v-QL-TUT" id="xDS-yB-6oP"/>
                         <outlet property="detailsTextView" destination="hYY-b1-NmT" id="yoz-ix-bvm"/>
                         <outlet property="funnyButton" destination="h4t-eq-uwn" id="kRf-eQ-ENE"/>
@@ -246,7 +241,7 @@
                                                     <constraint firstAttribute="height" constant="170" id="nGS-FP-zdx"/>
                                                 </constraints>
                                                 <color key="textColor" red="0.28627450980000002" green="0.33725490200000002" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dML-pF-CaV">
@@ -281,11 +276,6 @@
                                                     </button>
                                                 </subviews>
                                             </stackView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AzB-ws-tQ1">
-                                                <state key="normal" title=" Add details later?" image="emptyCheckButton">
-                                                    <color key="titleColor" red="0.28627450980000002" green="0.33725490200000002" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
-                                            </button>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qx6-lE-iIZ">
                                                 <color key="textColor" red="0.28627450980000002" green="0.33725490200000002" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -293,7 +283,9 @@
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RQ8-Au-7jI">
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                <state key="normal" title="Update moment"/>
+                                                <state key="normal" title="Update moment">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="updateMomentButtonTouched:" destination="7Dk-2o-qlL" eventType="touchUpInside" id="xoF-qV-9fe"/>
                                                 </connections>
@@ -301,8 +293,7 @@
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="qx6-lE-iIZ" secondAttribute="trailing" id="05T-hJ-QQJ"/>
-                                            <constraint firstItem="AzB-ws-tQ1" firstAttribute="centerX" secondItem="Qjg-qa-KFo" secondAttribute="centerX" constant="5" id="9VR-ID-2Yq"/>
-                                            <constraint firstItem="AzB-ws-tQ1" firstAttribute="top" secondItem="dML-pF-CaV" secondAttribute="bottom" constant="20" id="SmY-Zs-nt0"/>
+                                            <constraint firstItem="RQ8-Au-7jI" firstAttribute="top" secondItem="dML-pF-CaV" secondAttribute="bottom" constant="20" id="62C-uu-gVx"/>
                                             <constraint firstAttribute="height" constant="600" id="Zs8-xU-GGA"/>
                                             <constraint firstItem="qx6-lE-iIZ" firstAttribute="leading" secondItem="Qjg-qa-KFo" secondAttribute="leading" constant="10" id="aIc-A1-e5z"/>
                                             <constraint firstItem="xpa-nl-jIn" firstAttribute="top" secondItem="Qjg-qa-KFo" secondAttribute="top" constant="20" id="aaK-dC-bcH"/>
@@ -310,8 +301,6 @@
                                             <constraint firstItem="dML-pF-CaV" firstAttribute="top" secondItem="qx6-lE-iIZ" secondAttribute="bottom" constant="20" id="dUq-nh-Pnr"/>
                                             <constraint firstItem="qx6-lE-iIZ" firstAttribute="top" secondItem="xpa-nl-jIn" secondAttribute="bottom" constant="20" id="g9K-lN-dpN"/>
                                             <constraint firstItem="xpa-nl-jIn" firstAttribute="leading" secondItem="Qjg-qa-KFo" secondAttribute="leading" constant="10" id="hkf-Nb-jxf"/>
-                                            <constraint firstItem="RQ8-Au-7jI" firstAttribute="top" secondItem="AzB-ws-tQ1" secondAttribute="bottom" constant="20" id="iDH-mJ-ilu"/>
-                                            <constraint firstItem="AzB-ws-tQ1" firstAttribute="centerX" secondItem="Qjg-qa-KFo" secondAttribute="centerX" constant="5" id="mgY-iH-XlR"/>
                                             <constraint firstItem="RQ8-Au-7jI" firstAttribute="centerX" secondItem="Qjg-qa-KFo" secondAttribute="centerX" constant="5" id="rta-Cj-h7u"/>
                                             <constraint firstItem="dML-pF-CaV" firstAttribute="centerX" secondItem="Qjg-qa-KFo" secondAttribute="centerX" constant="5" id="yeo-Go-b1h"/>
                                         </constraints>
@@ -337,7 +326,6 @@
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="addDetailsButton" destination="AzB-ws-tQ1" id="RCl-Qa-eCr"/>
                         <outlet property="angryButton" destination="5vY-LH-YPu" id="87y-hI-cxo"/>
                         <outlet property="details" destination="xpa-nl-jIn" id="mfh-LZ-eaU"/>
                         <outlet property="funnyButton" destination="irK-ht-7vl" id="bQ7-wu-gia"/>
@@ -355,8 +343,6 @@
     <resources>
         <image name="angryEmojiButton" width="59" height="59"/>
         <image name="angrySelectedButton" width="59" height="59"/>
-        <image name="checkButton" width="43" height="43"/>
-        <image name="emptyCheckButton" width="43" height="43"/>
         <image name="funnyEmojiButton" width="59" height="59"/>
         <image name="funnySelectedButton" width="59" height="59"/>
         <image name="happyEmojiButton" width="59" height="59"/>

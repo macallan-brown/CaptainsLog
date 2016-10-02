@@ -74,6 +74,7 @@ class LogManager {
         let date = moment.value(forKey: "date") as! Date
         let emoji = moment.value(forKey: "emojiTag") as! String
         return (details, location, date, emoji)
+        
     }
     
     func loadMoments() {

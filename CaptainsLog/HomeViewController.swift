@@ -19,12 +19,15 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var funnyButton: UIButton!
     @IBOutlet weak var sadButton: UIButton!
     @IBOutlet weak var angryButton: UIButton!
-    @IBOutlet weak var addDetailsButton: UIButton!
     
     let logManager = LogManager.sharedInstance
     var emojiButtonSelected: UIButton? = nil
     override func viewDidLoad() {
         super.viewDidLoad()
+        recentMemoryTableView.layer.cornerRadius = 10.0
+        detailsTextView.layer.cornerRadius = 10.0
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -66,14 +69,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.detailsTextView.text! = ""
         emojiButtonSelected?.isSelected = false
         emojiButtonSelected = nil
-    }
-    
-    @IBAction func addDetailsButtonTouched(_ sender: UIButton) {
-        if(sender.isSelected) {
-            sender.isSelected = false;
-        } else {
-            sender.isSelected = true;
-        }
     }
     
     @IBAction func emojiButtonTouched(_ sender: UIButton) {
