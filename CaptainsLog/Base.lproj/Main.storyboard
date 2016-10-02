@@ -77,9 +77,10 @@
                                                                     <color key="textColor" red="0.28627450980000002" green="0.33725490200000002" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Budapest, Hungary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W6x-x3-5TJ">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Budapest, Hungary" textAlignment="natural" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W6x-x3-5TJ">
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="21" id="Xz5-4P-uMd"/>
+                                                                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="160" id="dbz-KC-ByX"/>
                                                                     </constraints>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                     <color key="textColor" red="0.28627450980000002" green="0.33725490200000002" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -124,6 +125,10 @@
                                                 <state key="normal" title=" Add details later?" image="emptyCheckButton">
                                                     <color key="titleColor" red="0.28627450980000002" green="0.33725490200000002" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <state key="selected" image="checkButton"/>
+                                                <connections>
+                                                    <action selector="addDetailsButtonTouched:" destination="ccp-Nt-2vn" eventType="touchUpInside" id="Nwr-l0-z8K"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VDx-XN-epn">
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -138,15 +143,31 @@
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xdj-X7-YSC">
                                                         <state key="normal" image="happyEmojiButton"/>
+                                                        <state key="selected" image="happySelectedButton"/>
+                                                        <connections>
+                                                            <action selector="emojiButtonTouched:" destination="ccp-Nt-2vn" eventType="touchUpInside" id="ZMK-Lm-07f"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h4t-eq-uwn">
                                                         <state key="normal" image="funnyEmojiButton"/>
+                                                        <state key="selected" image="funnySelectedButton"/>
+                                                        <connections>
+                                                            <action selector="emojiButtonTouched:" destination="ccp-Nt-2vn" eventType="touchUpInside" id="nkF-00-0r0"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D6J-TR-hIq">
                                                         <state key="normal" image="sadEmojiButton"/>
+                                                        <state key="selected" image="sadSelectedButton"/>
+                                                        <connections>
+                                                            <action selector="emojiButtonTouched:" destination="ccp-Nt-2vn" eventType="touchUpInside" id="LnM-Yi-kyQ"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D6v-QL-TUT">
                                                         <state key="normal" image="angryEmojiButton"/>
+                                                        <state key="selected" image="angrySelectedButton"/>
+                                                        <connections>
+                                                            <action selector="emojiButtonTouched:" destination="ccp-Nt-2vn" eventType="touchUpInside" id="lT9-ow-ojo"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -190,6 +211,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Log" id="dj0-xF-iyL"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="addDetailsButton" destination="f97-qn-38n" id="k3D-Bi-fqd"/>
                         <outlet property="angryButton" destination="D6v-QL-TUT" id="xDS-yB-6oP"/>
                         <outlet property="detailsTextView" destination="hYY-b1-NmT" id="yoz-ix-bvm"/>
                         <outlet property="funnyButton" destination="h4t-eq-uwn" id="kRf-eQ-ENE"/>
@@ -231,15 +253,31 @@
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EIe-IY-dZn">
                                                         <state key="normal" image="happyEmojiButton"/>
+                                                        <state key="selected" image="happySelectedButton"/>
+                                                        <connections>
+                                                            <action selector="emojiButtonTouched:" destination="7Dk-2o-qlL" eventType="touchUpInside" id="V6C-Jx-Qf7"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="irK-ht-7vl">
                                                         <state key="normal" image="funnyEmojiButton"/>
+                                                        <state key="selected" image="funnySelectedButton"/>
+                                                        <connections>
+                                                            <action selector="emojiButtonTouched:" destination="7Dk-2o-qlL" eventType="touchUpInside" id="28i-3b-AxK"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wG8-th-wA7">
                                                         <state key="normal" image="sadEmojiButton"/>
+                                                        <state key="selected" image="sadSelectedButton"/>
+                                                        <connections>
+                                                            <action selector="emojiButtonTouched:" destination="7Dk-2o-qlL" eventType="touchUpInside" id="ELO-RN-ZRO"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5vY-LH-YPu">
                                                         <state key="normal" image="angryEmojiButton"/>
+                                                        <state key="selected" image="angrySelectedButton"/>
+                                                        <connections>
+                                                            <action selector="emojiButtonTouched:" destination="7Dk-2o-qlL" eventType="touchUpInside" id="6xM-8K-jxr"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -316,9 +354,14 @@
     </scenes>
     <resources>
         <image name="angryEmojiButton" width="59" height="59"/>
+        <image name="angrySelectedButton" width="59" height="59"/>
+        <image name="checkButton" width="43" height="43"/>
         <image name="emptyCheckButton" width="43" height="43"/>
         <image name="funnyEmojiButton" width="59" height="59"/>
+        <image name="funnySelectedButton" width="59" height="59"/>
         <image name="happyEmojiButton" width="59" height="59"/>
+        <image name="happySelectedButton" width="59" height="59"/>
         <image name="sadEmojiButton" width="59" height="59"/>
+        <image name="sadSelectedButton" width="59" height="59"/>
     </resources>
 </document>

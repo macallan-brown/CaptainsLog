@@ -19,9 +19,10 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var funnyButton: UIButton!
     @IBOutlet weak var sadButton: UIButton!
     @IBOutlet weak var angryButton: UIButton!
+    @IBOutlet weak var addDetailsButton: UIButton!
     
     let logManager = LogManager.sharedInstance
-    
+    var emojiButtonSelected: UIButton? = nil
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -57,12 +58,58 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBAction func addToLogTouched() {
         view.endEditing(true)
-        logManager.addMoment(details: self.detailsTextView.text, location: "add location", date: Date(), emoji: "😂")
+        logManager.addMoment(details: self.detailsTextView.text,
+                             location: "",
+                             date: Date(),
+                             emoji: getSelectedEmoji())
         self.recentMemoryTableView.reloadData()
         self.detailsTextView.text! = ""
+        emojiButtonSelected?.isSelected = false
+        emojiButtonSelected = nil
     }
     
+    @IBAction func addDetailsButtonTouched(_ sender: UIButton) {
+        if(sender.isSelected) {
+            sender.isSelected = false;
+        } else {
+            sender.isSelected = true;
+        }
+    }
     
+    @IBAction func emojiButtonTouched(_ sender: UIButton) {
+        if emojiButtonSelected != nil  {
+            emojiButtonSelected?.isSelected = false;
+            emojiButtonSelected = nil
+        }
+        
+        if(sender.isSelected) {
+            sender.isSelected = false;
+            emojiButtonSelected = nil
+        } else {
+            sender.isSelected = true;
+            emojiButtonSelected = sender
+        }
+    }
+    
+    // MARK: Prepare for Log
+    
+    private func getSelectedEmoji() -> String {
+        if (emojiButtonSelected != nil) {
+            switch emojiButtonSelected! {
+            case self.happyButton:
+                return "😀"
+            case self.funnyButton:
+                return "😂"
+            case self.sadButton:
+                return "😢"
+            case self.angryButton:
+                return "😠"
+            default:
+                return ""
+            }
+        }
+        return ""
+    }
     
     // MARK: Segue Methods
     
