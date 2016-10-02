@@ -122,6 +122,10 @@
                                                 </connections>
                                             </tableView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VDx-XN-epn">
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="150" id="b72-iB-o2t"/>
+                                                    <constraint firstAttribute="height" constant="50" id="wbR-Lk-Zu7"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <state key="normal" title="Add to your log">
                                                     <color key="titleColor" red="0.28627450980000002" green="0.33725490200000002" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -204,9 +208,15 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Captain's Log" id="H8R-bn-1Dc">
-                        <barButtonItem key="rightBarButtonItem" title="Log" id="dj0-xF-iyL"/>
+                        <barButtonItem key="rightBarButtonItem" image="icon news" id="dj0-xF-iyL">
+                            <color key="tintColor" red="0.28627450980000002" green="0.33725490200000002" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="prA-sX-8n7" kind="show" id="mcl-PK-keH"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="addToLogButton" destination="VDx-XN-epn" id="gUt-PQ-HCe"/>
                         <outlet property="angryButton" destination="D6v-QL-TUT" id="xDS-yB-6oP"/>
                         <outlet property="detailsTextView" destination="hYY-b1-NmT" id="yoz-ix-bvm"/>
                         <outlet property="funnyButton" destination="h4t-eq-uwn" id="kRf-eQ-ENE"/>
@@ -282,6 +292,10 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RQ8-Au-7jI">
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="150" id="BF1-Pd-g08"/>
+                                                    <constraint firstAttribute="height" constant="50" id="yDH-Xd-KkD"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <state key="normal" title="Update moment">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -339,6 +353,157 @@
             </objects>
             <point key="canvasLocation" x="925.60000000000002" y="191.1544227886057"/>
         </scene>
+        <!--Log View Controller-->
+        <scene sceneID="isH-Ig-VPk">
+            <objects>
+                <viewController id="prA-sX-8n7" customClass="LogViewController" customModule="CaptainsLog" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hwv-MN-8rI"/>
+                        <viewControllerLayoutGuide type="bottom" id="gQE-er-buE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="G6h-zU-mZx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="L6z-Gv-kbF">
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zao-QH-LUM">
+                                        <state key="normal" image="happyEmojiButton"/>
+                                        <state key="selected" image="happySelectedButton"/>
+                                        <connections>
+                                            <action selector="emojiButtonTouched:" destination="7Dk-2o-qlL" eventType="touchUpInside" id="5kh-Xq-grW"/>
+                                            <action selector="emojiButtonTouched:" destination="prA-sX-8n7" eventType="touchUpInside" id="QXU-qt-Zeb"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="reX-er-o3h">
+                                        <state key="normal" image="funnyEmojiButton"/>
+                                        <state key="selected" image="funnySelectedButton"/>
+                                        <connections>
+                                            <action selector="emojiButtonTouched:" destination="prA-sX-8n7" eventType="touchUpInside" id="8SU-RF-OYu"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fHl-9d-yVD">
+                                        <state key="normal" image="sadEmojiButton"/>
+                                        <state key="selected" image="sadSelectedButton"/>
+                                        <connections>
+                                            <action selector="emojiButtonTouched:" destination="prA-sX-8n7" eventType="touchUpInside" id="CiR-EW-FRh"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pfG-Sr-cY4">
+                                        <state key="normal" image="angryEmojiButton"/>
+                                        <state key="selected" image="angrySelectedButton"/>
+                                        <connections>
+                                            <action selector="emojiButtonTouched:" destination="prA-sX-8n7" eventType="touchUpInside" id="ibL-1J-KvM"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XDW-Li-hEH">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="momentsTableViewCell" rowHeight="90" id="fA8-US-bve" customClass="RecentMemoryTableViewCell" customModule="CaptainsLog" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="355" height="90"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fA8-US-bve" id="hef-5H-bHt">
+                                            <frame key="frameInset" width="322" height="89"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qA7-ti-zAU">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="44" id="J3k-0o-Ie5"/>
+                                                    </constraints>
+                                                    <string key="text">Matt, Michael, and I got yelled at by a security gaurd in a budapest bar. Matt tried to open the door to the street and pulled the handle off
+</string>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.28627450980000002" green="0.33725490200000002" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <string key="userLabel">Matt, Michael, and I got yelled at by a security gaurd in a budapest bar. Matt tried to open the door to the street and pulled the handle off</string>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="09/05/16" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YWe-TM-ml8">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="HBL-8c-ifL"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.28627450980000002" green="0.33725490200000002" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Budapest, Hungary" textAlignment="natural" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dqZ-Nx-lur">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="GFF-es-bCg"/>
+                                                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="160" id="bCW-wW-SJy"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.28627450980000002" green="0.33725490200000002" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="😂" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3fj-rl-6mL">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="ZVV-f5-kyJ"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <color key="textColor" red="0.28627450980000002" green="0.33725490200000002" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="3fj-rl-6mL" firstAttribute="leading" secondItem="dqZ-Nx-lur" secondAttribute="trailing" constant="8" id="6Cn-8d-xaz"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="dqZ-Nx-lur" secondAttribute="bottom" id="OOz-eZ-R6q"/>
+                                                <constraint firstItem="dqZ-Nx-lur" firstAttribute="leading" secondItem="YWe-TM-ml8" secondAttribute="trailing" constant="8" id="QGD-7o-Kf1"/>
+                                                <constraint firstItem="qA7-ti-zAU" firstAttribute="leading" secondItem="hef-5H-bHt" secondAttribute="leadingMargin" constant="8" id="WvG-64-meJ"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="YWe-TM-ml8" secondAttribute="bottom" id="b8R-Pb-pVU"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="3fj-rl-6mL" secondAttribute="bottom" id="e8x-mr-LMa"/>
+                                                <constraint firstItem="qA7-ti-zAU" firstAttribute="top" secondItem="hef-5H-bHt" secondAttribute="topMargin" id="htI-eF-wu0"/>
+                                                <constraint firstAttribute="trailing" secondItem="qA7-ti-zAU" secondAttribute="trailing" constant="8" id="rCp-d5-rvE"/>
+                                                <constraint firstItem="YWe-TM-ml8" firstAttribute="leading" secondItem="hef-5H-bHt" secondAttribute="leadingMargin" constant="8" id="xmK-VO-oVC"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="date" destination="YWe-TM-ml8" id="Ywg-ZT-ZRB"/>
+                                            <outlet property="details" destination="qA7-ti-zAU" id="hIa-RQ-Dye"/>
+                                            <outlet property="emojiTag" destination="3fj-rl-6mL" id="mSA-7L-1VI"/>
+                                            <outlet property="location" destination="dqZ-Nx-lur" id="7HF-C4-wG3"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="prA-sX-8n7" id="2eN-sn-y0n"/>
+                                    <outlet property="delegate" destination="prA-sX-8n7" id="ElW-gR-PnF"/>
+                                </connections>
+                            </tableView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vq6-cL-U2b">
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="searchTextChanged:" destination="prA-sX-8n7" eventType="editingChanged" id="hed-Eu-lA4"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="0.78879779579999998" green="0.89750486610000002" blue="0.95199614759999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="XDW-Li-hEH" firstAttribute="leading" secondItem="G6h-zU-mZx" secondAttribute="leading" constant="10" id="8Ir-1U-5zP"/>
+                            <constraint firstItem="Vq6-cL-U2b" firstAttribute="top" secondItem="L6z-Gv-kbF" secondAttribute="bottom" constant="10" id="BVa-SJ-x3e"/>
+                            <constraint firstItem="L6z-Gv-kbF" firstAttribute="centerX" secondItem="G6h-zU-mZx" secondAttribute="centerX" id="KNm-ij-Alg"/>
+                            <constraint firstItem="XDW-Li-hEH" firstAttribute="top" secondItem="Vq6-cL-U2b" secondAttribute="bottom" constant="10" id="Ns6-Qa-Oob"/>
+                            <constraint firstItem="L6z-Gv-kbF" firstAttribute="top" secondItem="hwv-MN-8rI" secondAttribute="bottom" constant="10" id="Xyz-W0-3Db"/>
+                            <constraint firstAttribute="trailing" secondItem="XDW-Li-hEH" secondAttribute="trailing" constant="10" id="gNq-lk-KqF"/>
+                            <constraint firstAttribute="trailing" secondItem="Vq6-cL-U2b" secondAttribute="trailing" constant="10" id="wiF-pX-yrU"/>
+                            <constraint firstItem="gQE-er-buE" firstAttribute="top" secondItem="XDW-Li-hEH" secondAttribute="bottom" constant="10" id="xDF-6W-nSN"/>
+                            <constraint firstItem="Vq6-cL-U2b" firstAttribute="leading" secondItem="G6h-zU-mZx" secondAttribute="leading" constant="10" id="y42-lq-1SP"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="angryButton" destination="pfG-Sr-cY4" id="7KV-FQ-v9k"/>
+                        <outlet property="funnyButton" destination="reX-er-o3h" id="79H-S5-MkT"/>
+                        <outlet property="happyButton" destination="Zao-QH-LUM" id="APe-wy-0wh"/>
+                        <outlet property="momentsTableView" destination="XDW-Li-hEH" id="kRl-M1-qun"/>
+                        <outlet property="sadButton" destination="fHl-9d-yVD" id="hOV-zR-JhY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SMZ-Wy-Lkw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1685.5999999999999" y="195.6521739130435"/>
+        </scene>
     </scenes>
     <resources>
         <image name="angryEmojiButton" width="59" height="59"/>
@@ -347,6 +512,7 @@
         <image name="funnySelectedButton" width="59" height="59"/>
         <image name="happyEmojiButton" width="59" height="59"/>
         <image name="happySelectedButton" width="59" height="59"/>
+        <image name="icon news" width="18" height="20"/>
         <image name="sadEmojiButton" width="59" height="59"/>
         <image name="sadSelectedButton" width="59" height="59"/>
     </resources>

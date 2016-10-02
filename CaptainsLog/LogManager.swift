@@ -93,4 +93,22 @@ class LogManager {
             print("Could not fetch \(error), \(error.userInfo)")
         }
     }
+    
+    func loadMomentsEmoji(emoji:String) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+        let fetchRequest:NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "Moment")
+        let sectionSortDescriptor = NSSortDescriptor(key: "date", ascending: false)
+        let sortDescriptors = [sectionSortDescriptor]
+        fetchRequest.predicate = NSPredicate(format: "%K CONTAINS[cd] %@", "emojiTag", emoji)
+        fetchRequest.sortDescriptors = sortDescriptors
+        
+        do {
+            let results = try managedContext.fetch(fetchRequest)
+            moments = results as! [NSManagedObject]
+        } catch let error as NSError {
+            print("Could not fetch \(error), \(error.userInfo)")
+        }
+    }
 }

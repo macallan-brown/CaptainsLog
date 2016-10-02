@@ -20,6 +20,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var sadButton: UIButton!
     @IBOutlet weak var angryButton: UIButton!
     
+    @IBOutlet weak var addToLogButton: UIButton!
+    
     let logManager = LogManager.sharedInstance
     var emojiButtonSelected: UIButton? = nil
     override func viewDidLoad() {
@@ -27,7 +29,10 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         recentMemoryTableView.layer.cornerRadius = 10.0
         detailsTextView.layer.cornerRadius = 10.0
         
-        
+        addToLogButton.layer.borderWidth = 2.0
+        let myColor : UIColor = UIColor( red: 1.0, green: 1.0, blue:1.0, alpha: 1.0 )
+        addToLogButton.layer.borderColor = myColor.cgColor
+        addToLogButton.layer.cornerRadius = 10.0
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -61,14 +66,24 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBAction func addToLogTouched() {
         view.endEditing(true)
-        logManager.addMoment(details: self.detailsTextView.text,
-                             location: "",
-                             date: Date(),
-                             emoji: getSelectedEmoji())
-        self.recentMemoryTableView.reloadData()
-        self.detailsTextView.text! = ""
-        emojiButtonSelected?.isSelected = false
-        emojiButtonSelected = nil
+        
+        if(detailsTextView.text != "") {
+            let captainGreen : UIColor = UIColor( red: 184/255, green: 233/255, blue:134/255, alpha:0.7)
+            UIView.animate(withDuration: 0.5, animations: {
+                self.addToLogButton.backgroundColor = captainGreen
+                }, completion: { finished in
+                    self.addToLogButton.backgroundColor = UIColor.clear
+            })
+            
+            logManager.addMoment(details: self.detailsTextView.text,
+                                 location: "",
+                                 date: Date(),
+                                 emoji: getSelectedEmoji())
+            self.recentMemoryTableView.reloadData()
+            self.detailsTextView.text! = ""
+            emojiButtonSelected?.isSelected = false
+            emojiButtonSelected = nil
+        }
     }
     
     @IBAction func emojiButtonTouched(_ sender: UIButton) {
@@ -85,6 +100,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             emojiButtonSelected = sender
         }
     }
+
+    
     
     // MARK: Prepare for Log
     

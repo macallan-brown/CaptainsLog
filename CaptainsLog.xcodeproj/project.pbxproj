@@ -13,6 +13,7 @@
 		236C2D321D945AC0001C6C58 /* CaptainsLog.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 236C2D301D945AC0001C6C58 /* CaptainsLog.xcdatamodeld */; };
 		236C2D341D945AC0001C6C58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 236C2D331D945AC0001C6C58 /* Assets.xcassets */; };
 		236C2D371D945AC0001C6C58 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 236C2D351D945AC0001C6C58 /* LaunchScreen.storyboard */; };
+		238F05291DA1A23A00F14526 /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238F05281DA1A23A00F14526 /* LogViewController.swift */; };
 		23EB0D931D9FE768005AD7E4 /* RecentMemoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EB0D921D9FE768005AD7E4 /* RecentMemoryTableViewCell.swift */; };
 		23EB0D981DA03DCA005AD7E4 /* LogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EB0D971DA03DCA005AD7E4 /* LogManager.swift */; };
 		23EB0D9A1DA04BE4005AD7E4 /* MomentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EB0D991DA04BE4005AD7E4 /* MomentDetailViewController.swift */; };
@@ -27,6 +28,7 @@
 		236C2D331D945AC0001C6C58 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		236C2D361D945AC0001C6C58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		236C2D381D945AC0001C6C58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		238F05281DA1A23A00F14526 /* LogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
 		23EB0D921D9FE768005AD7E4 /* RecentMemoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentMemoryTableViewCell.swift; sourceTree = "<group>"; };
 		23EB0D971DA03DCA005AD7E4 /* LogManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogManager.swift; sourceTree = "<group>"; };
 		23EB0D991DA04BE4005AD7E4 /* MomentDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MomentDetailViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 			children = (
 				236C2D2B1D945AC0001C6C58 /* HomeViewController.swift */,
 				23EB0D991DA04BE4005AD7E4 /* MomentDetailViewController.swift */,
+				238F05281DA1A23A00F14526 /* LogViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -178,6 +181,7 @@
 				23EB0D981DA03DCA005AD7E4 /* LogManager.swift in Sources */,
 				236C2D2A1D945AC0001C6C58 /* AppDelegate.swift in Sources */,
 				236C2D321D945AC0001C6C58 /* CaptainsLog.xcdatamodeld in Sources */,
+				238F05291DA1A23A00F14526 /* LogViewController.swift in Sources */,
 				23EB0D931D9FE768005AD7E4 /* RecentMemoryTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

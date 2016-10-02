@@ -26,6 +26,9 @@ class MomentDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         details.layer.cornerRadius = 10.0
+        updateMomentButton.layer.borderWidth = 2.0
+        updateMomentButton.layer.borderColor = UIColor.white.cgColor
+        updateMomentButton.layer.cornerRadius = 10.0
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -53,6 +56,12 @@ class MomentDetailViewController: UIViewController {
     }
     
     @IBAction func updateMomentButtonTouched(_ sender: AnyObject) {
+        let captainGreen : UIColor = UIColor( red: 184/255, green: 233/255, blue:134/255, alpha:0.7)
+        UIView.animate(withDuration: 0.5, animations: {
+                self.updateMomentButton.backgroundColor = captainGreen
+            }, completion: { finished in
+                self.updateMomentButton.backgroundColor = UIColor.clear
+        })
         logManager.updateMoment(index: momentIndex,
                                 details:self.details.text!,
                                 location:self.location.text!,
