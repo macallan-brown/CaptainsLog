@@ -35,7 +35,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ke3-NL-5Iu">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="ke3-NL-5Iu">
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pUb-iH-NAA">
                                         <subviews>
@@ -121,7 +121,7 @@
                                                 </connections>
                                             </tableView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f97-qn-38n">
-                                                <state key="normal" title=" Add details later?" image="emptyCheckButton.png">
+                                                <state key="normal" title=" Add details later?" image="emptyCheckButton">
                                                     <color key="titleColor" red="0.28627450980000002" green="0.33725490200000002" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                             </button>
@@ -137,16 +137,16 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="4xl-aE-Hjp">
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xdj-X7-YSC">
-                                                        <state key="normal" image="happyEmojiButton.png"/>
+                                                        <state key="normal" image="happyEmojiButton"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h4t-eq-uwn">
-                                                        <state key="normal" image="funnyEmojiButton.png"/>
+                                                        <state key="normal" image="funnyEmojiButton"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D6J-TR-hIq">
-                                                        <state key="normal" image="sadEmojiButton.png"/>
+                                                        <state key="normal" image="sadEmojiButton"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D6v-QL-TUT">
-                                                        <state key="normal" image="angryEmojiButton.png"/>
+                                                        <state key="normal" image="angryEmojiButton"/>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -182,7 +182,7 @@
                             <constraint firstItem="ke3-NL-5Iu" firstAttribute="top" secondItem="FoK-AS-6ud" secondAttribute="bottom" id="42N-GW-2yD"/>
                             <constraint firstItem="ke3-NL-5Iu" firstAttribute="leading" secondItem="s3p-dg-fEs" secondAttribute="leadingMargin" constant="-16" id="B4a-ma-Opu"/>
                             <constraint firstItem="ke3-NL-5Iu" firstAttribute="bottom" secondItem="i10-8Y-qrS" secondAttribute="top" id="IaI-dH-FCm"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ke3-NL-5Iu" secondAttribute="trailing" constant="-16" id="OhD-L2-f71"/>
+                            <constraint firstItem="ke3-NL-5Iu" firstAttribute="trailing" secondItem="s3p-dg-fEs" secondAttribute="trailingMargin" constant="16" id="OhD-L2-f71"/>
                             <constraint firstItem="4xl-aE-Hjp" firstAttribute="centerX" secondItem="s3p-dg-fEs" secondAttribute="centerX" id="hHM-3B-xUE"/>
                         </constraints>
                     </view>
@@ -214,74 +214,86 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qjg-qa-KFo">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="qIy-9N-nPC">
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xpa-nl-jIn">
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="170" id="nGS-FP-zdx"/>
-                                        </constraints>
-                                        <color key="textColor" red="0.28627450980000002" green="0.33725490200000002" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dML-pF-CaV">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qjg-qa-KFo">
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EIe-IY-dZn">
-                                                <state key="normal" image="happyEmojiButton.png"/>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xpa-nl-jIn">
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="170" id="nGS-FP-zdx"/>
+                                                </constraints>
+                                                <color key="textColor" red="0.28627450980000002" green="0.33725490200000002" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dML-pF-CaV">
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EIe-IY-dZn">
+                                                        <state key="normal" image="happyEmojiButton"/>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="irK-ht-7vl">
+                                                        <state key="normal" image="funnyEmojiButton"/>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wG8-th-wA7">
+                                                        <state key="normal" image="sadEmojiButton"/>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5vY-LH-YPu">
+                                                        <state key="normal" image="angryEmojiButton"/>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AzB-ws-tQ1">
+                                                <state key="normal" title=" Add details later?" image="emptyCheckButton">
+                                                    <color key="titleColor" red="0.28627450980000002" green="0.33725490200000002" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="irK-ht-7vl">
-                                                <state key="normal" image="funnyEmojiButton.png"/>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wG8-th-wA7">
-                                                <state key="normal" image="sadEmojiButton.png"/>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5vY-LH-YPu">
-                                                <state key="normal" image="angryEmojiButton.png"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qx6-lE-iIZ">
+                                                <color key="textColor" red="0.28627450980000002" green="0.33725490200000002" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RQ8-Au-7jI">
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <state key="normal" title="Update moment"/>
+                                                <connections>
+                                                    <action selector="updateMomentButtonTouched:" destination="7Dk-2o-qlL" eventType="touchUpInside" id="xoF-qV-9fe"/>
+                                                </connections>
                                             </button>
                                         </subviews>
-                                    </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AzB-ws-tQ1">
-                                        <state key="normal" title=" Add details later?" image="emptyCheckButton.png">
-                                            <color key="titleColor" red="0.28627450980000002" green="0.33725490200000002" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                    </button>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qx6-lE-iIZ">
-                                        <color key="textColor" red="0.28627450980000002" green="0.33725490200000002" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RQ8-Au-7jI">
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <state key="normal" title="Update moment"/>
-                                        <connections>
-                                            <action selector="updateMomentButtonTouched:" destination="7Dk-2o-qlL" eventType="touchUpInside" id="xoF-qV-9fe"/>
-                                        </connections>
-                                    </button>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="qx6-lE-iIZ" secondAttribute="trailing" id="05T-hJ-QQJ"/>
+                                            <constraint firstItem="AzB-ws-tQ1" firstAttribute="centerX" secondItem="Qjg-qa-KFo" secondAttribute="centerX" constant="5" id="9VR-ID-2Yq"/>
+                                            <constraint firstItem="AzB-ws-tQ1" firstAttribute="top" secondItem="dML-pF-CaV" secondAttribute="bottom" constant="20" id="SmY-Zs-nt0"/>
+                                            <constraint firstAttribute="height" constant="600" id="Zs8-xU-GGA"/>
+                                            <constraint firstItem="qx6-lE-iIZ" firstAttribute="leading" secondItem="Qjg-qa-KFo" secondAttribute="leading" constant="10" id="aIc-A1-e5z"/>
+                                            <constraint firstItem="xpa-nl-jIn" firstAttribute="top" secondItem="Qjg-qa-KFo" secondAttribute="top" constant="20" id="aaK-dC-bcH"/>
+                                            <constraint firstAttribute="trailing" secondItem="xpa-nl-jIn" secondAttribute="trailing" id="cvo-rw-WSX"/>
+                                            <constraint firstItem="dML-pF-CaV" firstAttribute="top" secondItem="qx6-lE-iIZ" secondAttribute="bottom" constant="20" id="dUq-nh-Pnr"/>
+                                            <constraint firstItem="qx6-lE-iIZ" firstAttribute="top" secondItem="xpa-nl-jIn" secondAttribute="bottom" constant="20" id="g9K-lN-dpN"/>
+                                            <constraint firstItem="xpa-nl-jIn" firstAttribute="leading" secondItem="Qjg-qa-KFo" secondAttribute="leading" constant="10" id="hkf-Nb-jxf"/>
+                                            <constraint firstItem="RQ8-Au-7jI" firstAttribute="top" secondItem="AzB-ws-tQ1" secondAttribute="bottom" constant="20" id="iDH-mJ-ilu"/>
+                                            <constraint firstItem="AzB-ws-tQ1" firstAttribute="centerX" secondItem="Qjg-qa-KFo" secondAttribute="centerX" constant="5" id="mgY-iH-XlR"/>
+                                            <constraint firstItem="RQ8-Au-7jI" firstAttribute="centerX" secondItem="Qjg-qa-KFo" secondAttribute="centerX" constant="5" id="rta-Cj-h7u"/>
+                                            <constraint firstItem="dML-pF-CaV" firstAttribute="centerX" secondItem="Qjg-qa-KFo" secondAttribute="centerX" constant="5" id="yeo-Go-b1h"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="qx6-lE-iIZ" secondAttribute="trailing" constant="10" id="05T-hJ-QQJ"/>
-                                    <constraint firstItem="AzB-ws-tQ1" firstAttribute="centerX" secondItem="Qjg-qa-KFo" secondAttribute="centerX" id="9VR-ID-2Yq"/>
-                                    <constraint firstItem="AzB-ws-tQ1" firstAttribute="top" secondItem="dML-pF-CaV" secondAttribute="bottom" constant="20" id="SmY-Zs-nt0"/>
-                                    <constraint firstItem="qx6-lE-iIZ" firstAttribute="leading" secondItem="Qjg-qa-KFo" secondAttribute="leading" constant="10" id="aIc-A1-e5z"/>
-                                    <constraint firstItem="xpa-nl-jIn" firstAttribute="top" secondItem="Qjg-qa-KFo" secondAttribute="top" constant="20" id="aaK-dC-bcH"/>
-                                    <constraint firstAttribute="trailing" secondItem="xpa-nl-jIn" secondAttribute="trailing" constant="10" id="cvo-rw-WSX"/>
-                                    <constraint firstItem="dML-pF-CaV" firstAttribute="top" secondItem="qx6-lE-iIZ" secondAttribute="bottom" constant="20" id="dUq-nh-Pnr"/>
-                                    <constraint firstItem="qx6-lE-iIZ" firstAttribute="top" secondItem="xpa-nl-jIn" secondAttribute="bottom" constant="20" id="g9K-lN-dpN"/>
-                                    <constraint firstItem="xpa-nl-jIn" firstAttribute="leading" secondItem="Qjg-qa-KFo" secondAttribute="leading" constant="10" id="hkf-Nb-jxf"/>
-                                    <constraint firstItem="RQ8-Au-7jI" firstAttribute="top" secondItem="AzB-ws-tQ1" secondAttribute="bottom" constant="20" id="iDH-mJ-ilu"/>
-                                    <constraint firstItem="AzB-ws-tQ1" firstAttribute="centerX" secondItem="Qjg-qa-KFo" secondAttribute="centerX" id="mgY-iH-XlR"/>
-                                    <constraint firstItem="RQ8-Au-7jI" firstAttribute="centerX" secondItem="Qjg-qa-KFo" secondAttribute="centerX" id="rta-Cj-h7u"/>
-                                    <constraint firstItem="dML-pF-CaV" firstAttribute="centerX" secondItem="Qjg-qa-KFo" secondAttribute="centerX" id="yeo-Go-b1h"/>
+                                    <constraint firstItem="Qjg-qa-KFo" firstAttribute="leading" secondItem="qIy-9N-nPC" secondAttribute="leading" id="DYT-lX-5NL"/>
+                                    <constraint firstAttribute="trailing" secondItem="Qjg-qa-KFo" secondAttribute="trailing" constant="10" id="FIm-II-VfT"/>
+                                    <constraint firstItem="Qjg-qa-KFo" firstAttribute="top" secondItem="qIy-9N-nPC" secondAttribute="top" id="GHp-af-q23"/>
+                                    <constraint firstAttribute="bottom" secondItem="Qjg-qa-KFo" secondAttribute="bottom" constant="-41" id="ayy-3x-7Lt"/>
                                 </constraints>
-                            </view>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="0.78879779579999998" green="0.89750486610000002" blue="0.95199614759999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Qjg-qa-KFo" firstAttribute="leading" secondItem="wDk-zk-u7S" secondAttribute="leading" id="Kf3-Yz-2JZ"/>
-                            <constraint firstAttribute="bottom" secondItem="Qjg-qa-KFo" secondAttribute="bottom" id="Xgk-zA-pti"/>
-                            <constraint firstAttribute="trailing" secondItem="Qjg-qa-KFo" secondAttribute="trailing" id="hVD-Cd-n4y"/>
-                            <constraint firstItem="Qjg-qa-KFo" firstAttribute="top" secondItem="4wd-79-uym" secondAttribute="bottom" id="rZP-PI-yZe"/>
+                            <constraint firstItem="qIy-9N-nPC" firstAttribute="leading" secondItem="wDk-zk-u7S" secondAttribute="leadingMargin" constant="-16" id="5Lr-tF-13C"/>
+                            <constraint firstItem="qIy-9N-nPC" firstAttribute="trailing" secondItem="wDk-zk-u7S" secondAttribute="trailingMargin" constant="16" id="LsB-7d-fTy"/>
+                            <constraint firstItem="qIy-9N-nPC" firstAttribute="bottom" secondItem="Vb9-bo-XPU" secondAttribute="top" id="VfA-1a-PFy"/>
+                            <constraint firstItem="Qjg-qa-KFo" firstAttribute="width" secondItem="wDk-zk-u7S" secondAttribute="width" constant="-10" id="YRE-OU-gfm"/>
+                            <constraint firstItem="qIy-9N-nPC" firstAttribute="top" secondItem="4wd-79-uym" secondAttribute="bottom" id="a21-D1-if1"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -303,10 +315,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="angryEmojiButton.png" width="59" height="59"/>
-        <image name="emptyCheckButton.png" width="43" height="43"/>
-        <image name="funnyEmojiButton.png" width="59" height="59"/>
-        <image name="happyEmojiButton.png" width="59" height="59"/>
-        <image name="sadEmojiButton.png" width="59" height="59"/>
+        <image name="angryEmojiButton" width="59" height="59"/>
+        <image name="emptyCheckButton" width="43" height="43"/>
+        <image name="funnyEmojiButton" width="59" height="59"/>
+        <image name="happyEmojiButton" width="59" height="59"/>
+        <image name="sadEmojiButton" width="59" height="59"/>
     </resources>
 </document>

@@ -24,7 +24,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -57,10 +56,13 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     // MARK: Add to Log clicked
     
     @IBAction func addToLogTouched() {
+        view.endEditing(true)
         logManager.addMoment(details: self.detailsTextView.text, location: "add location", date: Date(), emoji: "😂")
         self.recentMemoryTableView.reloadData()
         self.detailsTextView.text! = ""
     }
+    
+    
     
     // MARK: Segue Methods
     

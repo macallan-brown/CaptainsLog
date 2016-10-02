@@ -13,11 +13,6 @@
 		236C2D321D945AC0001C6C58 /* CaptainsLog.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 236C2D301D945AC0001C6C58 /* CaptainsLog.xcdatamodeld */; };
 		236C2D341D945AC0001C6C58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 236C2D331D945AC0001C6C58 /* Assets.xcassets */; };
 		236C2D371D945AC0001C6C58 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 236C2D351D945AC0001C6C58 /* LaunchScreen.storyboard */; };
-		236C2D3F1D946150001C6C58 /* happyEmojiButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 236C2D3E1D946150001C6C58 /* happyEmojiButton.png */; };
-		239D09141D9ABBD20050D9FD /* funnyEmojiButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 239D09131D9ABBD20050D9FD /* funnyEmojiButton.png */; };
-		239D09171D9ABC230050D9FD /* angryEmojiButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 239D09151D9ABC230050D9FD /* angryEmojiButton.png */; };
-		239D09181D9ABC230050D9FD /* sadEmojiButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 239D09161D9ABC230050D9FD /* sadEmojiButton.png */; };
-		239D091A1D9ABD000050D9FD /* emptyCheckButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 239D09191D9ABD000050D9FD /* emptyCheckButton.png */; };
 		23EB0D931D9FE768005AD7E4 /* RecentMemoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EB0D921D9FE768005AD7E4 /* RecentMemoryTableViewCell.swift */; };
 		23EB0D981DA03DCA005AD7E4 /* LogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EB0D971DA03DCA005AD7E4 /* LogManager.swift */; };
 		23EB0D9A1DA04BE4005AD7E4 /* MomentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EB0D991DA04BE4005AD7E4 /* MomentDetailViewController.swift */; };
@@ -32,11 +27,6 @@
 		236C2D331D945AC0001C6C58 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		236C2D361D945AC0001C6C58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		236C2D381D945AC0001C6C58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		236C2D3E1D946150001C6C58 /* happyEmojiButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = happyEmojiButton.png; sourceTree = "<group>"; };
-		239D09131D9ABBD20050D9FD /* funnyEmojiButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = funnyEmojiButton.png; sourceTree = "<group>"; };
-		239D09151D9ABC230050D9FD /* angryEmojiButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = angryEmojiButton.png; sourceTree = "<group>"; };
-		239D09161D9ABC230050D9FD /* sadEmojiButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sadEmojiButton.png; sourceTree = "<group>"; };
-		239D09191D9ABD000050D9FD /* emptyCheckButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emptyCheckButton.png; sourceTree = "<group>"; };
 		23EB0D921D9FE768005AD7E4 /* RecentMemoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentMemoryTableViewCell.swift; sourceTree = "<group>"; };
 		23EB0D971DA03DCA005AD7E4 /* LogManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogManager.swift; sourceTree = "<group>"; };
 		23EB0D991DA04BE4005AD7E4 /* MomentDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MomentDetailViewController.swift; sourceTree = "<group>"; };
@@ -79,7 +69,6 @@
 				236C2D2D1D945AC0001C6C58 /* Main.storyboard */,
 				236C2D351D945AC0001C6C58 /* LaunchScreen.storyboard */,
 				236C2D331D945AC0001C6C58 /* Assets.xcassets */,
-				23EB0D901D9FE669005AD7E4 /* images */,
 				236C2D381D945AC0001C6C58 /* Info.plist */,
 				236C2D301D945AC0001C6C58 /* CaptainsLog.xcdatamodeld */,
 			);
@@ -93,18 +82,6 @@
 				23EB0D991DA04BE4005AD7E4 /* MomentDetailViewController.swift */,
 			);
 			name = "View Controllers";
-			sourceTree = "<group>";
-		};
-		23EB0D901D9FE669005AD7E4 /* images */ = {
-			isa = PBXGroup;
-			children = (
-				239D09191D9ABD000050D9FD /* emptyCheckButton.png */,
-				239D09151D9ABC230050D9FD /* angryEmojiButton.png */,
-				239D09161D9ABC230050D9FD /* sadEmojiButton.png */,
-				239D09131D9ABBD20050D9FD /* funnyEmojiButton.png */,
-				236C2D3E1D946150001C6C58 /* happyEmojiButton.png */,
-			);
-			name = images;
 			sourceTree = "<group>";
 		};
 		23EB0D911D9FE733005AD7E4 /* Views */ = {
@@ -183,13 +160,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				239D091A1D9ABD000050D9FD /* emptyCheckButton.png in Resources */,
-				239D09181D9ABC230050D9FD /* sadEmojiButton.png in Resources */,
 				236C2D371D945AC0001C6C58 /* LaunchScreen.storyboard in Resources */,
-				239D09141D9ABBD20050D9FD /* funnyEmojiButton.png in Resources */,
-				236C2D3F1D946150001C6C58 /* happyEmojiButton.png in Resources */,
 				236C2D341D945AC0001C6C58 /* Assets.xcassets in Resources */,
-				239D09171D9ABC230050D9FD /* angryEmojiButton.png in Resources */,
 				236C2D2F1D945AC0001C6C58 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
