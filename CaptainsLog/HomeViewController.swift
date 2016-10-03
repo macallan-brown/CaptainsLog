@@ -48,7 +48,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     // MARK: TableView Delegate
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.logManager.countMoments()
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -59,7 +59,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Your recent memories: "
+        return "Your recent moments: "
     }
     
     // MARK: Add to Log clicked
@@ -87,14 +87,13 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     @IBAction func emojiButtonTouched(_ sender: UIButton) {
-        if emojiButtonSelected != nil  {
-            emojiButtonSelected?.isSelected = false;
+        if (sender == emojiButtonSelected) {
+            sender.isSelected = false
             emojiButtonSelected = nil
-        }
-        
-        if(sender.isSelected) {
-            sender.isSelected = false;
-            emojiButtonSelected = nil
+        } else if (emojiButtonSelected != nil) {
+            emojiButtonSelected?.isSelected = false
+            sender.isSelected = true
+            emojiButtonSelected = sender
         } else {
             sender.isSelected = true;
             emojiButtonSelected = sender

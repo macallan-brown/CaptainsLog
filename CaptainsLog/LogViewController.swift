@@ -15,6 +15,7 @@ class LogViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     @IBOutlet weak var sadButton: UIButton!
     @IBOutlet weak var angryButton: UIButton!
     
+    @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var momentsTableView: UITableView!
     var emojiButtonSelected:UIButton? = nil
     
@@ -25,6 +26,10 @@ class LogViewController: UIViewController, UITableViewDelegate, UITableViewDataS
 
         // Do any additional setup after loading the view.
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        momentsTableView.reloadData()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -32,6 +37,8 @@ class LogViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     }
     
     @IBAction func emojiButtonTouched(_ sender: UIButton) {
+        searchTextField.text = ""
+        
         if (sender == emojiButtonSelected) {
             sender.isSelected = false
             emojiButtonSelected = nil
@@ -70,7 +77,15 @@ class LogViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     }
     
     @IBAction func searchTextChanged(_ sender: UITextField) {
+        emojiButtonSelected?.isSelected = false
+        emojiButtonSelected = nil
         
+        if (sender.text! != "") {
+            logManager.loadMomentsSearch(text: sender.text!)
+        } else {
+            logManager.loadMoments()
+        }
+        momentsTableView.reloadData()
     }
     
     // MARK: TableView Delegate
@@ -90,14 +105,15 @@ class LogViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         return "Moments: "
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    // MARK: Segue Methods
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if (segue.identifier == "showMomentDetailSegue") {
+            let momentDetailViewController = segue.destination as! MomentDetailViewController
+            
+            let momentIndex = self.momentsTableView.indexPathForSelectedRow?.row
+            momentDetailViewController.momentIndex = momentIndex!
+        }
     }
-    */
 
 }

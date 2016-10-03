@@ -70,14 +70,13 @@ class MomentDetailViewController: UIViewController {
     
     
     @IBAction func emojiButtonTouched(_ sender: UIButton) {
-        if emojiButtonSelected != nil  {
-            emojiButtonSelected?.isSelected = false;
+        if (sender == emojiButtonSelected) {
+            sender.isSelected = false
             emojiButtonSelected = nil
-        }
-        
-        if(sender.isSelected) {
-            sender.isSelected = false;
-            emojiButtonSelected = nil
+        } else if (emojiButtonSelected != nil) {
+            emojiButtonSelected?.isSelected = false
+            sender.isSelected = true
+            emojiButtonSelected = sender
         } else {
             sender.isSelected = true;
             emojiButtonSelected = sender
