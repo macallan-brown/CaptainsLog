@@ -11,28 +11,39 @@ import CoreData
 
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    @IBOutlet weak var recentMemoryTableView: UITableView!
+    @IBOutlet weak var recentMemoryTableView: UITableView! {
+        didSet {
+            recentMemoryTableView.layer.cornerRadius = 10.0
+            recentMemoryTableView.transform = CGAffineTransform(translationX: 0, y: 300)
+        }
+    }
     
-    @IBOutlet weak var detailsTextView: UITextView!
+    @IBOutlet weak var detailsTextView: UITextView! {
+        didSet {
+            detailsTextView.layer.cornerRadius = 10.0
+        }
+    }
     
     @IBOutlet weak var happyButton: UIButton!
     @IBOutlet weak var funnyButton: UIButton!
     @IBOutlet weak var sadButton: UIButton!
     @IBOutlet weak var angryButton: UIButton!
     
-    @IBOutlet weak var addToLogButton: UIButton!
+    @IBOutlet weak var addToLogButton: UIButton! {
+        didSet {
+            addToLogButton.layer.borderWidth = 2.0
+            let myColor : UIColor = UIColor( red: 1.0, green: 1.0, blue:1.0, alpha: 1.0 )
+            addToLogButton.layer.borderColor = myColor.cgColor
+            addToLogButton.layer.cornerRadius = 10.0
+        }
+    }
     
     let logManager = LogManager.sharedInstance
     var emojiButtonSelected: UIButton? = nil
     override func viewDidLoad() {
         super.viewDidLoad()
-        recentMemoryTableView.layer.cornerRadius = 10.0
-        detailsTextView.layer.cornerRadius = 10.0
         
-        addToLogButton.layer.borderWidth = 2.0
-        let myColor : UIColor = UIColor( red: 1.0, green: 1.0, blue:1.0, alpha: 1.0 )
-        addToLogButton.layer.borderColor = myColor.cgColor
-        addToLogButton.layer.cornerRadius = 10.0
+        animateLoadView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -44,6 +55,10 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    // MARK: Properties
+    
+
     
     // MARK: TableView Delegate
     
@@ -131,6 +146,14 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             let momentIndex = self.recentMemoryTableView.indexPathForSelectedRow?.row
             momentDetailViewController.momentIndex = momentIndex!
         }
+    }
+    
+    // MARK: Animation methods
+    
+    func animateLoadView() {
+        UIView.animate(withDuration: 0.5, delay: 0.5, options: .curveEaseOut, animations: {
+            self.recentMemoryTableView.transform = CGAffineTransform.identity
+        })
     }
 
 }
