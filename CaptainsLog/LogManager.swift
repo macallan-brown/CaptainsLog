@@ -140,7 +140,9 @@ class LogManager {
         let csvHeaderString = (attribs.reduce("",{($0 as String) + "," + $1 as NSString })).substring(from: 1) + "\n"
         
         let csvArray = moments.map({object in
-            (attribs.map({((object.value(forKey: $0) ?? "NIL") as AnyObject).description}).reduce("",{$0 + "," + $1}) as NSString).substring(from: 1) + "\n"
+            (attribs.map({((object.value(forKey: $0) ?? "") as AnyObject).description}).reduce("",{
+                $0 + "," + ($1?.replacingOccurrences(of: ",", with: "-"))!
+            }) as NSString).substring(from: 1) + "\n"
         })
         let csvString = csvArray.reduce("", +)
         
