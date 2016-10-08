@@ -2,4 +2,133 @@
 <Bucket
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CaptainsLog/LogManager.swift"
+            timestampString = "497646707.435281"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "142"
+            endingLineNumber = "142"
+            landmarkName = "writeCoreDataObjectToCSV(named:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CaptainsLog.LogManager.writeCoreDataObjectToCSV (named : Swift.String) -&gt; Swift.String"
+                  moduleName = "CaptainsLog"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/codingaccount/Documents/Xcode/CaptainsLog/CaptainsLog/LogManager.swift"
+                  timestampString = "497646729.456561"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "142"
+                  endingLineNumber = "142"
+                  offsetFromSymbolStart = "1052">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CaptainsLog.LogManager.(writeCoreDataObjectToCSV (named : Swift.String) -&gt; Swift.String).(closure #2)"
+                  moduleName = "CaptainsLog"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/codingaccount/Documents/Xcode/CaptainsLog/CaptainsLog/LogManager.swift"
+                  timestampString = "497646729.458047"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "143"
+                  endingLineNumber = "143"
+                  offsetFromSymbolStart = "44">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CaptainsLog/LogManager.swift"
+            timestampString = "497646847.843624"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
+            landmarkName = "writeCoreDataObjectToCSV(named:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CaptainsLog/LogManager.swift"
+            timestampString = "497647376.053971"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "143"
+            endingLineNumber = "143"
+            landmarkName = "writeCoreDataObjectToCSV(named:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CaptainsLog.LogManager.(writeCoreDataObjectToCSV (named : Swift.String) -&gt; Swift.String).(closure #2)"
+                  moduleName = "CaptainsLog"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/codingaccount/Documents/Xcode/CaptainsLog/CaptainsLog/LogManager.swift"
+                  timestampString = "497647384.854963"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "143"
+                  endingLineNumber = "143"
+                  offsetFromSymbolStart = "44">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CaptainsLog.LogManager.(writeCoreDataObjectToCSV (named : Swift.String) -&gt; Swift.String).(closure #2).(closure #1)"
+                  moduleName = "CaptainsLog"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/codingaccount/Documents/Xcode/CaptainsLog/CaptainsLog/LogManager.swift"
+                  timestampString = "497647384.856451"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "143"
+                  endingLineNumber = "143"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CaptainsLog.LogManager.(writeCoreDataObjectToCSV (named : Swift.String) -&gt; Swift.String).(closure #2).(closure #2)"
+                  moduleName = "CaptainsLog"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/codingaccount/Documents/Xcode/CaptainsLog/CaptainsLog/LogManager.swift"
+                  timestampString = "497647384.859768"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "143"
+                  endingLineNumber = "143"
+                  offsetFromSymbolStart = "44">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

@@ -208,6 +208,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Captain's Log" id="H8R-bn-1Dc">
+                        <barButtonItem key="leftBarButtonItem" title="⚙" id="DRr-gN-Cro">
+                            <connections>
+                                <segue destination="WR8-5I-f7N" kind="show" id="b7J-xd-qL7"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="icon news" id="dj0-xF-iyL">
                             <color key="tintColor" red="0.28627450980000002" green="0.33725490200000002" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
@@ -228,6 +233,66 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PyH-UT-WhI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="204" y="192.05397301349328"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="nOn-XW-Dfo">
+            <objects>
+                <viewController id="WR8-5I-f7N" customClass="SettingsViewController" customModule="CaptainsLog" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2Hu-Ya-eB6"/>
+                        <viewControllerLayoutGuide type="bottom" id="fMs-UG-LVP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="o0a-uw-PID">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="95b-gb-Uap">
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gFU-5G-YF3">
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6be-Co-ia6">
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="S6o-ZS-Jp3"/>
+                                                    <constraint firstAttribute="width" constant="238" id="uyR-ZY-fju"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <state key="normal" title="Send Moments to Email">
+                                                    <color key="titleColor" red="0.28627450980000002" green="0.33725490200000002" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="emailMomentsButtonTouched:" destination="WR8-5I-f7N" eventType="touchUpInside" id="fpT-se-1Mu"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="603" id="IoY-Eu-ZwM"/>
+                                            <constraint firstItem="6be-Co-ia6" firstAttribute="top" secondItem="gFU-5G-YF3" secondAttribute="top" constant="60" id="QvR-DB-i4m"/>
+                                            <constraint firstItem="6be-Co-ia6" firstAttribute="centerX" secondItem="gFU-5G-YF3" secondAttribute="centerX" id="ac5-j1-HQ0"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="gFU-5G-YF3" secondAttribute="trailing" id="Ej8-pJ-vEl"/>
+                                    <constraint firstAttribute="bottom" secondItem="gFU-5G-YF3" secondAttribute="bottom" constant="8" id="JOp-k0-A0o"/>
+                                    <constraint firstItem="gFU-5G-YF3" firstAttribute="top" secondItem="95b-gb-Uap" secondAttribute="topMargin" constant="-16" id="LnL-Mt-vxT"/>
+                                    <constraint firstItem="gFU-5G-YF3" firstAttribute="leading" secondItem="95b-gb-Uap" secondAttribute="leading" id="y4R-yr-amw"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="95b-gb-Uap" firstAttribute="top" secondItem="2Hu-Ya-eB6" secondAttribute="bottom" id="1zC-Zv-1pd"/>
+                            <constraint firstItem="gFU-5G-YF3" firstAttribute="width" secondItem="o0a-uw-PID" secondAttribute="width" id="NSB-lr-YV9"/>
+                            <constraint firstItem="fMs-UG-LVP" firstAttribute="top" secondItem="95b-gb-Uap" secondAttribute="bottom" id="Oz3-zg-jpV"/>
+                            <constraint firstItem="95b-gb-Uap" firstAttribute="leading" secondItem="o0a-uw-PID" secondAttribute="leading" id="gZX-Qq-bab"/>
+                            <constraint firstAttribute="trailing" secondItem="95b-gb-Uap" secondAttribute="trailing" id="xs7-C5-lSF"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fPS-W5-5Je" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="204" y="970.16491754122944"/>
         </scene>
         <!--Moment Detail View Controller-->
         <scene sceneID="JW2-gi-BKD">
@@ -384,7 +449,7 @@
                                                         <rect key="frame" x="0.0" y="28" width="355" height="90"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fA8-US-bve" id="hef-5H-bHt">
-                                                            <frame key="frameInset" width="322" height="89"/>
+                                                            <frame key="frameInset" width="322" height="89.5"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qA7-ti-zAU">
@@ -541,6 +606,6 @@
         <image name="sadSelectedButton" width="59" height="59"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="aDk-nR-e0c"/>
+        <segue reference="kx2-OS-eTN"/>
     </inferredMetricsTieBreakers>
 </document>

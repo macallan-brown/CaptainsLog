@@ -130,5 +130,22 @@ class LogManager {
         }
     }
     
+    func writeCoreDataObjectToCSV(named: String) -> String {
+        /* We assume that all objects are of the same type */
+        guard moments.count > 0 else {
+            return ""
+        }
+        let firstObject = moments[0]
+        let attribs = Array(firstObject.entity.attributesByName.keys)
+        let csvHeaderString = (attribs.reduce("",{($0 as String) + "," + $1 as NSString })).substring(from: 1) + "\n"
+        
+        let csvArray = moments.map({object in
+            (attribs.map({((object.value(forKey: $0) ?? "NIL") as AnyObject).description}).reduce("",{$0 + "," + $1}) as NSString).substring(from: 1) + "\n"
+        })
+        let csvString = csvArray.reduce("", +)
+        
+        return csvHeaderString+csvString
+    }
+    
     
 }
