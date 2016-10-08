@@ -12,6 +12,7 @@ import MessageUI
 class SettingsViewController: UIViewController, MFMailComposeViewControllerDelegate {
 
     let logManager = LogManager.sharedInstance
+    var mailVC = MFMailComposeViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,8 +30,7 @@ class SettingsViewController: UIViewController, MFMailComposeViewControllerDeleg
         let csvString = logManager.writeCoreDataObjectToCSV(named: "moment")
         let data = csvString.data(using: String.Encoding.utf8)
         
-        
-        let mailVC = MFMailComposeViewController()
+        mailVC = MFMailComposeViewController()
         mailVC.mailComposeDelegate = self
         mailVC.setToRecipients([])
         mailVC.setSubject("Subject for email")
@@ -40,6 +40,12 @@ class SettingsViewController: UIViewController, MFMailComposeViewControllerDeleg
                                    fileName: "mydata.csv")
         
         present(mailVC, animated: true, completion: nil)
+    }
+    
+    // MARK: MailComposeViewControllerDelegate
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        mailVC.dismiss(animated: true, completion: nil)
     }
 
     /*
