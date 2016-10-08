@@ -14,10 +14,15 @@ class SettingsViewController: UIViewController, MFMailComposeViewControllerDeleg
     let logManager = LogManager.sharedInstance
     var mailVC = MFMailComposeViewController()
     
+    @IBOutlet weak var csvEmailButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        csvEmailButton.layer.borderWidth = 2.0
+        let myColor : UIColor = UIColor( red: 1.0, green: 1.0, blue:1.0, alpha: 1.0 )
+        csvEmailButton.layer.borderColor = myColor.cgColor
+        csvEmailButton.layer.cornerRadius = 10.0
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,11 +38,11 @@ class SettingsViewController: UIViewController, MFMailComposeViewControllerDeleg
         mailVC = MFMailComposeViewController()
         mailVC.mailComposeDelegate = self
         mailVC.setToRecipients([])
-        mailVC.setSubject("Subject for email")
-        mailVC.setMessageBody("Email message string", isHTML: false)
+        mailVC.setSubject("Your Moments from Captains Log")
+        mailVC.setMessageBody("Attached is a CSV file with your moments. All commas in your data have been replaced with '-' to create the file.", isHTML: false)
         mailVC.addAttachmentData(data!,
                                    mimeType: "text/csv",
-                                   fileName: "mydata.csv")
+                                   fileName: "CaptainsLogData.csv")
         
         present(mailVC, animated: true, completion: nil)
     }
