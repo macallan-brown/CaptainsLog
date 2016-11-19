@@ -65,13 +65,18 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     // MARK: TableView Delegate
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        if(self.logManager.countMoments()>=3){
+            return 3
+        }
+        return self.logManager.countMoments()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.recentMemoryTableView.dequeueReusableCell(withIdentifier: "recentMemoryTableViewCell", for: indexPath) as! RecentMemoryTableViewCell
-        let moment = self.logManager.getMomentAtIndex(index: indexPath.row)
-        cell.setupWith(details: moment.details, location: moment.location, date: moment.date, emoji: moment.emoji)
+        if(self.logManager.countMoments() > indexPath.row){
+            let moment = self.logManager.getMomentAtIndex(index: indexPath.row)
+            cell.setupWith(details: moment.details, location: moment.location, date: moment.date, emoji: moment.emoji)
+        }
         return cell
     }
     
