@@ -12,7 +12,8 @@ Captain's Log is a tool to facilitate me in my quest to become a better storytel
 + Tag moments with a location and an emoji
 + Delete moments
 + View log of moments
-+ View log sorted by location or emoji tags
++ View log sorted by emoji tags
++ Search for moment that contains certain text
 + Email csv file of moments
 
 ##Future Features
@@ -28,4 +29,8 @@ Home View
 
 Moment Detail View
 
+![image](https://cloud.githubusercontent.com/assets/12898508/20459314/69608c7c-aeb4-11e6-878c-5959772ed9ad.png)
+
 Log View
+
+![image](https://cloud.githubusercontent.com/assets/12898508/20459319/8d5e5a14-aeb4-11e6-9951-1624b1ddc325.png)
