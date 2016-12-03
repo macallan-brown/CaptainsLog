@@ -8,6 +8,7 @@
 
 import UIKit
 import MessageUI
+import UserNotifications
 
 class SettingsViewController: UIViewController, MFMailComposeViewControllerDelegate {
 
@@ -15,6 +16,7 @@ class SettingsViewController: UIViewController, MFMailComposeViewControllerDeleg
     var mailVC = MFMailComposeViewController()
     
     @IBOutlet weak var csvEmailButton: UIButton!
+    @IBOutlet weak var notificationDatePicker: UIDatePicker!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,12 +49,44 @@ class SettingsViewController: UIViewController, MFMailComposeViewControllerDeleg
         present(mailVC, animated: true, completion: nil)
     }
     
+    @IBAction func notificationSwitchChanged(_ sender: UISwitch) {
+        if(sender.isOn){
+            scheduleLocalNotification()
+        } else {
+            cancelLocalNotification()
+        }
+    }
+    
     // MARK: MailComposeViewControllerDelegate
     
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         mailVC.dismiss(animated: true, completion: nil)
     }
+    
+    func scheduleLocalNotification() {
+        let center = UNUserNotificationCenter.current()
+        
+        let content = UNMutableNotificationContent()
+        content.title = "Ahoy Matey"
+        content.body = "Don't forget your favorite moment of the day! Record it in your log."
+        content.categoryIdentifier = "alarm"
+        content.sound = UNNotificationSound.default()
+        
+        var dateComponents = DateComponents()
+        let calendar = NSCalendar.current
+        var compos = calendar.dateComponents(in: calendar.timeZone, from: notificationDatePicker.date)
 
+        dateComponents.hour = compos.hour
+        dateComponents.minute = compos.minute
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+        center.add(request)
+    }
+    
+    func cancelLocalNotification() {
+        let center = UNUserNotificationCenter.current()
+        center.removeAllPendingNotificationRequests()
+    }
     /*
     // MARK: - Navigation
 
