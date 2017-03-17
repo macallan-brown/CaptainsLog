@@ -15,9 +15,9 @@ Captain's Log is a tool to facilitate me in my quest to become a better storytel
 + View log sorted by emoji tags
 + Search for moment that contains certain text
 + Email csv file of moments
++ Set a daily notification reminder to log the moments
 
 ## Future Features
-+ Set a daily notification reminder to log the moments (in progress)
 + Sync log with iCloud
 + Add more advanced sorting features
 + Create macOS app
