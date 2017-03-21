@@ -116,4 +116,7 @@ class LogViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         }
     }
 
+    @IBAction func swipeRight(_ sender: UISwipeGestureRecognizer) {
+       _ = self.navigationController?.popViewController(animated: true)
+    }
 }

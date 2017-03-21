@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ceo-fo-DS2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ceo-fo-DS2">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -215,6 +215,7 @@
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="0.77647058823529413" green="0.90980392156862744" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="ke3-NL-5Iu" firstAttribute="top" secondItem="FoK-AS-6ud" secondAttribute="bottom" id="42N-GW-2yD"/>
                             <constraint firstItem="ke3-NL-5Iu" firstAttribute="leading" secondItem="s3p-dg-fEs" secondAttribute="leadingMargin" constant="-16" id="B4a-ma-Opu"/>
@@ -222,6 +223,9 @@
                             <constraint firstItem="ke3-NL-5Iu" firstAttribute="trailing" secondItem="s3p-dg-fEs" secondAttribute="trailingMargin" constant="16" id="OhD-L2-f71"/>
                             <constraint firstItem="4xl-aE-Hjp" firstAttribute="centerX" secondItem="s3p-dg-fEs" secondAttribute="centerX" id="hHM-3B-xUE"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="RNS-5A-DoR" appends="YES" id="Gaw-B9-bKH"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Captain's Log" id="H8R-bn-1Dc">
                         <barButtonItem key="leftBarButtonItem" title="⚙" id="DRr-gN-Cro">
@@ -232,7 +236,7 @@
                         <barButtonItem key="rightBarButtonItem" image="icon news" id="dj0-xF-iyL">
                             <color key="tintColor" red="0.28627450980000002" green="0.33725490200000002" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <segue destination="prA-sX-8n7" kind="show" id="mcl-PK-keH"/>
+                                <segue destination="prA-sX-8n7" kind="show" identifier="LogButton" id="mcl-PK-keH"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -247,6 +251,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PyH-UT-WhI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="left" id="RNS-5A-DoR">
+                    <connections>
+                        <action selector="leftSwipe:" destination="ccp-Nt-2vn" id="iyG-Go-Cg9"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="204" y="192.05397301349328"/>
         </scene>
@@ -518,10 +527,10 @@
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="momentsTableViewCell" rowHeight="90" id="fA8-US-bve" customClass="RecentMemoryTableViewCell" customModule="CaptainsLog" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="28" width="1000" height="90"/>
+                                                        <rect key="frame" x="0.0" y="28" width="355" height="90"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fA8-US-bve" id="hef-5H-bHt">
-                                                            <rect key="frame" x="0.0" y="0.0" width="818" height="89.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="322" height="89.5"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qA7-ti-zAU">
@@ -671,6 +680,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SMZ-Wy-Lkw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="Vzc-64-xGM">
+                    <connections>
+                        <action selector="swipeRight:" destination="prA-sX-8n7" id="8Uu-42-L6c"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="941.60000000000002" y="192.95352323838082"/>
         </scene>
@@ -687,6 +701,6 @@
         <image name="sadSelectedButton" width="59" height="59"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="kx2-OS-eTN"/>
+        <segue reference="aDk-nR-e0c"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -161,6 +161,10 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         })
     }
     
+    @IBAction func leftSwipe(_ sender: UISwipeGestureRecognizer) {
+        print("SWIPE")
+        self.performSegue(withIdentifier: "LogButton", sender: nil)
+    }
     
 
 }
